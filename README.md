@@ -17,9 +17,10 @@
  The website was built using the Spring MVC framework utilizing controllers and DAO patterns that communicate with a MySQL backend using a Hibernate ORM framework.  The website
  is secured using Spring Security authentication and authorization functionality utilizing user roles.  The view layer consists of JSP pages that are styled using CSS3.  
  
- A user initially is presented with a landing page where they can login or register for access.  If registering, they are initially given a default role of "RENTER" which is
+ A user is initially presented with a landing page where they can login or register for access.  If registering, they are initially given a default role of "RENTER" which is
  the role with the least access.  Administrators may change a user's role to any of 5 other roles: "CONTRACTOR", "EMPLOYEE", "MANAGER", "OWNER" or "ADMIN".  Spring Security
- functionality restricts access to parts of the website and specific functionality based on the user's role.
+ functionality restricts access to parts of the website and specific functionality based on the user's role.  If a user attempts to access a restricted resource, they are
+ presented with a custom access denied error page.
  
  
  
