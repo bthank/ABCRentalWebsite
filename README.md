@@ -9,6 +9,7 @@
  - Servlets/JSP
  - HTML5/CSS3
  - JavaScript
+ - jQuery
  - SQL utilizing a MySQL database
  - Hibernate ORM
  - JSTL
