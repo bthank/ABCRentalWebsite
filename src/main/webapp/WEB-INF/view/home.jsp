@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,19 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
 
 <style>
 .fakeimg {
@@ -107,7 +121,8 @@ nav {
 				<hr class="d-sm-none">
 			</div>
 			<div class="col-sm-8">
-				<h2>Our newest property under management, Willow Woods Apartments</h2>
+				<h2>Our newest property under management, Willow Woods
+					Apartments</h2>
 				<h5>Upscale apartments at 1200 Whistler Way, Devon, PA</h5>
 				<div class="box box2">
 					<img alt="apartment complex"
@@ -126,7 +141,8 @@ nav {
 
 
 
-				<h2>In March 2021 we contracted to manage 36 units at Remington Suites</h2>
+				<h2>In March 2021 we contracted to manage 36 units at Remington
+					Suites</h2>
 				<h5>Upscale living at it's finest at 900 Eaton Way, Exton PA</h5>
 				<div class="box box2">
 					<img alt="apartment complex"
@@ -150,10 +166,24 @@ nav {
 
 
 	<%@include file="common/common-footer1.jsp"%>
+	
+
+	<div id="dialog-message" title="Very Important">
+		<p>
+			<span class="ui-icon ui-icon-circle-check"
+				style="float: left; margin: 0 7px 50px 0;"></span> Hello
+			<span style="color: red; font-weight: bold;">${user.firstName}</span>. Please check out important information posted in
+			your <b style="color: red;">${role} Portal</b> page.
+		</p>
+		<p>
+			Time is of the <b>essence</b>!.
+		</p>
+
+	</div>
 
 
-	<script
-		src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-	</body>
+	<script src="${pageContext.request.contextPath}/resources/js/main.js">
+		
+	</script>
 </body>
 </html>

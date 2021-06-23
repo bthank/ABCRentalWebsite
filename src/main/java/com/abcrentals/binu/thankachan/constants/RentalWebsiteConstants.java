@@ -184,8 +184,8 @@ public final class RentalWebsiteConstants {
 	};
 	
 	
-	public static final String NOT_FOUND = "Error 200: You must be joking!  That doesnt exist!";
-	public static final String INTERNAL_SERVER_ERROR = "Error 500: What just happened?  This is a mess!";
-	public static final String RUNTIME_EXCEPTION = "Runtime Exception cause:  What just happened?  This is a mess!";
+	public static final String NOT_FOUND = "ERROR 200: You must be joking!  What do you mean this doesnt exist???  <br><br>";
+	public static final String INTERNAL_SERVER_ERROR = "ERROR 500: What just happened?  This is a mess!  <br><br>";
+	public static final String RUNTIME_EXCEPTION = "RUNTIME EXCEPTION:  What just happened?  This is a mess!  <br><br>";
 	
 }

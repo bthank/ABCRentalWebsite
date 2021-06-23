@@ -1,6 +1,26 @@
+	$( "#dialog-message" ).dialog({
+		modal: true,
+		buttons: {
+			Ok: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
+       
+       
+       
+       
 
- 
-       alert('Hello there.  Please visit your Portal page for important information.');
+
+//    	$( "#dialog" ).dialog();
+
+       
+       
+       
+       
+       
+       
+       
 
 /*        if('${hasRoleAdmin}' == true){
     

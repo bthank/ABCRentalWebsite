@@ -217,27 +217,30 @@ body {
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="userName" cssClass="error" />
 								<form:input path="userName" placeholder="username (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="userName" cssClass="error" />
+									
 							</div>
 
 							<!-- Password -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-lock"></i></span>
-								<form:errors path="password" cssClass="error" />
 								<form:password path="password" placeholder="password (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="password" cssClass="error" />
+
 							</div>
 
 							<!-- Confirm Password -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-lock"></i></span>
-								<form:errors path="matchingPassword" cssClass="error" />
 								<form:password path="matchingPassword"
-									placeholder="confirm password (*)" class="form-control" />
+									placeholder="confirm password (*)" class="form-control" /><br>
+								<form:errors path="matchingPassword" cssClass="error" />
+
 							</div>
 
 
@@ -245,45 +248,50 @@ body {
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="namePrefix" cssClass="error" />
 								<form:input path="namePrefix" placeholder="name prefix (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="namePrefix" cssClass="error" />
+
 							</div>
 
 							<!-- First name -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="firstName" cssClass="error" />
 								<form:input path="firstName" placeholder="first name (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="firstName" cssClass="error" />
+
 							</div>
 
 							<!-- Last name -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="lastName" cssClass="error" />
 								<form:input path="lastName" placeholder="last name (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="lastName" cssClass="error" />
+
 							</div>
 
 							<!-- name suffix -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="nameSuffix" cssClass="error" />
 								<form:input path="nameSuffix" placeholder="name suffix (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="nameSuffix" cssClass="error" />
+
 							</div>
 
 							<!-- Email -->
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span>
-								<form:errors path="email" cssClass="error" />
 								<form:input path="email" placeholder="email (*)"
-									class="form-control" />
+									class="form-control" /><br>
+								<form:errors path="email" cssClass="error" />
+
 							</div>
 
 

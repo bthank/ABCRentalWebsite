@@ -17,7 +17,7 @@
                         
         
         <property name="java-output-path" value="/spring-security-custom-user-registration-demo/target/classes"/>
-        <property name="context-root" value="ABCRentalWebsite"/>
+        <property name="context-root" value="spring-security-custom-user-registration-demo"/>
                     
     
     </wb-module>

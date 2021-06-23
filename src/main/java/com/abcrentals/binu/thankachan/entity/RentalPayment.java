@@ -68,6 +68,30 @@ public class RentalPayment {
 		super();
 		 
 	}
+	
+	
+
+	public RentalPayment(Long renterUserId,
+			Long rentalPropertyId,
+			Integer rentalUnitNo,
+			String rentalYear,
+			String rentalMonth,
+			Boolean paymentMade, LocalDate dateOfPayment,
+			Double monthsRentAmt, String note) {
+		super();
+		this.id = id;
+		this.renterUserId = renterUserId;
+		this.rentalPropertyId = rentalPropertyId;
+		this.rentalUnitNo = rentalUnitNo;
+		this.rentalYear = rentalYear;
+		this.rentalMonth = rentalMonth;
+		this.paymentMade = paymentMade;
+		this.dateOfPayment = dateOfPayment;
+		this.monthsRentAmt = monthsRentAmt;
+		this.note = note;
+	}
+
+
 
 	public Long getId() {
 		return id;

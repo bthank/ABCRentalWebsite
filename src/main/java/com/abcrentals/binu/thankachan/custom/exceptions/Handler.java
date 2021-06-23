@@ -32,7 +32,7 @@ public class Handler {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error");
         List<String> details = new ArrayList<>();
-        details.add(RentalWebsiteConstants.INTERNAL_SERVER_ERROR + ":   This is AWFUL! I NEVER EXPECTED SUCH A CRAZY EXCEPTION!  Just read how awful it is: " + ex.getLocalizedMessage());
+        details.add(RentalWebsiteConstants.INTERNAL_SERVER_ERROR + "This is REALLY, REALLY AWFUL! WHY DID I GET AN EXCEPTION???  <br><br>Message: " + ex.getLocalizedMessage());
         modelAndView.addObject("message", details);
         return modelAndView;       
         
@@ -46,7 +46,7 @@ public class Handler {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error");
         List<String> details = new ArrayList<>();
-        details.add(RentalWebsiteConstants.NOT_FOUND + ":   This is AWFUL! I THOUGHT WE COULD FIND IT!  Just read how awful it is: " + ex.getLocalizedMessage());
+        details.add(RentalWebsiteConstants.NOT_FOUND + "This is REALLY, REALLY AWFUL!  WHY CAN'T THE HANDLER BE FOUND???  <br><br>Message: " + ex.getLocalizedMessage());
         modelAndView.addObject("message", details);
         return modelAndView;       
         
@@ -54,13 +54,13 @@ public class Handler {
     }    
     
     @ExceptionHandler(RuntimeException.class)
-    public final ModelAndView handleUserNotFoundException(RuntimeException ex,
+    public final ModelAndView handleRunTimeException(RuntimeException ex,
                                                 WebRequest request) {
                    
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error");
         List<String> details = new ArrayList<>();
-        details.add(RentalWebsiteConstants.RUNTIME_EXCEPTION + ":  This is A BAD, BAD RUNTIME EXCEPTION! GLAD WE CAUGHT IT!  Just read how awful it is: " + ex.getLocalizedMessage());
+        details.add(RentalWebsiteConstants.RUNTIME_EXCEPTION + "This is REALLY, REALLY AWFUL!  WHY A RUNTIME EXCEPTION, NOW???  <br><br>Message: " + ex.getLocalizedMessage());
         modelAndView.addObject("message", details);
         return modelAndView;       
      }

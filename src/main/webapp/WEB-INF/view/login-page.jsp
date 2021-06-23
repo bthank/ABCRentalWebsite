@@ -73,7 +73,7 @@ body {
 
 		<div id="wrapper">
 			<div id="header" style="text-align: center; font-weight: bold;">
-				<h1 style="font-weight: bold; font-size: 4em;">ABC Rental Property Management</h1>
+				<h1 style="font-weight: bold; font-size: 4.5em;">ABC Rental Property Management</h1>
 
 				
 			</div>

@@ -13,10 +13,17 @@ import com.abcrentals.binu.thankachan.entity.RentalPayment;
 @Service
 public class RentalPaymentServiceImpl implements RentalPaymentService{
 
-	@Autowired
+	//@Autowired
 	private RentalPaymentDao rentalPaymentDao;
 	
 	
+	
+	
+	@Autowired
+	public RentalPaymentServiceImpl(RentalPaymentDao rentalPaymentDao) {
+		this.rentalPaymentDao = rentalPaymentDao;
+	}
+
 	@Override
 	@Transactional
 	public RentalPayment findById(long id) {

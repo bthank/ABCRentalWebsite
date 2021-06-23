@@ -136,8 +136,8 @@ nav {
 											</a><br><br> 
 											
 											<a
-												href="${pageContext.request.contextPath}/rental-property/showAddRentalPropertyPage">
-												<button type="button" class="btn btn-primary btn-size">Add Rental Property</button>
+												href="${pageContext.request.contextPath}/rental-repair/showAddRentalRepairPage">
+												<button type="button" class="btn btn-primary btn-size">Add Rental Repair</button>
 											</a><br><br> 
 											
 											
@@ -148,7 +148,7 @@ nav {
 											
 											<a
 												href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showSelectRentalRepairToDeletePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Rental Property</button>
+												<button type="button" class="btn btn-danger btn-size">Delete Rental Repair</button>
 											</a><br><br> 
 
 

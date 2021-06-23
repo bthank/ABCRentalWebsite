@@ -90,8 +90,10 @@ nav {
 
 		<hr>
 
-		<a href="${pageContext.request.contextPath}/showMyLoginPage">Login
-			with new user</a>
+		<h3>
+			<a href="${pageContext.request.contextPath}/showMyLoginPage">Login
+				with new user</a>
+		</h3>
 					
 	</p>
 	<br>
