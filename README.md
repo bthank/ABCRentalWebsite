@@ -71,32 +71,32 @@
 41.	Create Owner Portal page
 42.	Add ability to display the corresponding portal type page for the type of user role that is logged in
 43.	Add a popup message on the landing page that reminds the user to visit their portal page for important information
-44.	Create Manage Profiles page and grant access to all logged in users
-  a.	Create subpage for Display functionality
-  b.	Create subpage for Add functionality
-  c.	Create subpage for Update functionality
-  d.	Create subpage for Delete functionality	
-45.	Create Manage Users page and grant access only to Admin users
-  a.	Create subpage for Display functionality
-  b.	Create subpage for Update User Access Level functionality
-  c.	Create subpage for Delete functionality	
-46.	Create Manage Rental Properties page and grant access to Admin and Manager users
-  a.	Create subpage for Display functionality
-  b.	Create subpage for Add functionality
-  c.	Create subpage for Update functionality
-  d.	Create subpage for Delete functionality	
-47.	Create Manage Rental Payments page and grant access to Admin, Manager and Employee users
-  a.	Create subpage for Display All Rental Payments functionality
-  b.	Create subpage for Display Specific Rental Payments functionality based on search criteria
-  c.	Create subpage for Add functionality
-  d.	Create subpage for Update functionality
-  e.	Create subpage for Delete functionality	
-48.	Create Manage Rental Repairs page and grant access to Admin, Manager and Employee users
-  a.	Create subpage for Display functionality
-  b.	Create subpage for Add functionality
-  c.	Create subpage for Update functionality
-  d.	Create subpage for Delete functionality	
-  e.	Grant access to the Add page to all users except contractors 
+44.	Create Manage Profiles page and grant access to all logged in users<br>
+  a.	Create subpage for Display functionality<br>
+  b.	Create subpage for Add functionality<br>
+  c.	Create subpage for Update functionality<br>
+  d.	Create subpage for Delete functionality	<br>
+45.	Create Manage Users page and grant access only to Admin users<br>
+  a.	Create subpage for Display functionality<br>
+  b.	Create subpage for Update User Access Level functionality<br>
+  c.	Create subpage for Delete functionality	<br>
+46.	Create Manage Rental Properties page and grant access to Admin and Manager users<br>
+  a.	Create subpage for Display functionality<br>
+  b.	Create subpage for Add functionality<br>
+  c.	Create subpage for Update functionality<br>
+  d.	Create subpage for Delete functionality	<br>
+47.	Create Manage Rental Payments page and grant access to Admin, Manager and Employee users<br>
+  a.	Create subpage for Display All Rental Payments functionality<br>
+  b.	Create subpage for Display Specific Rental Payments functionality based on search criteria<br>
+  c.	Create subpage for Add functionality<br>
+  d.	Create subpage for Update functionality<br>
+  e.	Create subpage for Delete functionality	<br>
+48.	Create Manage Rental Repairs page and grant access to Admin, Manager and Employee users<br>
+  a.	Create subpage for Display functionality<br>
+  b.	Create subpage for Add functionality<br>
+  c.	Create subpage for Update functionality<br>
+  d.	Create subpage for Delete functionality	<br>
+  e.	Grant access to the Add page to all users except contractors <br>
 49.	Create Renter page option to allow downloading of renter lease agreement document
 50.	Create Renter page option to allow downloading of renter parking agreement document
 51.	Create Contractor page option to allow downloading of contractor agreement document
