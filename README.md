@@ -69,12 +69,12 @@
 39.	As a rental property management company I want the website to automatically make available the corresponding portal type page for the user role that is logged in
 40.	As a rental property management company I want users to see a popup message on the home page that reminds the logged in user to visit their portal page for important information
 41.	As a property management company, I want all logged in users to have access to a Manage Profiles page
-42.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them to Display their profile
-43.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Add a profile
-44.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
-45.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
+42.	From the Manage Profiles page I would like logged in users to be able to access a subpage that will allow them to Display their profile
+43.	From the Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Add a profile
+44.	From the Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
+45.	From the Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
 46.	As a property management company, I want Admin users to have access to an Administrator User Management page
-47.	From the Administrator User Management I would like Admin users to be able to access a subpage that will allow them to Display all users
+47.	From the Administrator User Management page I would like Admin users to be able to access a subpage that will allow them to Display all users
 48.	From the Administrator User Management page I would like Admin users to be able to access a subpage that will allow them to Update the Access Level for specific users
 49.	From the Administrator User Management page I would like Admin users to be able to access a subpage that will allow them to Delete specific users
 50.	As a property management company I would like Admin and Manager users to have access to a Manage Rental Properties page
