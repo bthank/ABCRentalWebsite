@@ -7,7 +7,7 @@
  - Spring MVC
  - Spring Security using BCrypt password encryption
  - Servlets/JSP
- - HTML5/CSS3
+ - HTML5/CSS3/Bootstrap
  - JavaScript
  - jQuery
  - SQL utilizing a MySQL database
@@ -28,78 +28,73 @@
  The ABC Rental Property Management Website Creation project was entailed the following user stories:
 
  User Stories:
-1.	Create standard layout to be shared by most/all website pages
-2.	Create common header for website pages to generate similar look and feel for all pages
-3.	Create common footer for website page to generate similar look and feel for all pages
-4.	Create landing page
-5.	Create Login page that is available to everyone, whether logged in or not
-6.	Create Registration page that is available to everyone, whether logged in or not
-7.	Add Spring Security functionality for authentication and authorization
-8.	Add login functionality to the login page
-9.	Add registration functionality to the registration page
-10.	Add logout button functionality that is available from each user page, which will return user to the landing page.
-11.	Create About Us page
-12.	Create Contact Us page
-13.	Create Privacy Notice page
-14.	Create Terms of Use page
-15.	Add links for About Us, Contact Us, Privacy Notice and Terms of Use to common footer
-16.	Create the database schema.
-17.	Create User table
-18.	Create Roles table
-19.	Create User Roles table
-20.	Create Admin Profile table
-21.	Create Contractor Profile table
-22.	Create Employee Profile table
-23.	Create Renter Profile table
-24.	Create Manager Profile table
-25.	Create Owner Profile table
-26.	Create Contact Info table
-27.	Create Employer Info table
-28.	Create Personal Info table
-29.	Create Address table
-30.	Create Country table
-31.	Create States or Provinces table
-32.	Create Rental Properties table
-33.	Create Rental Payments table
-34.	Create Rental Repairs table
-35.	Create Rental Unit Amenities table
-36.	Create Renter Portal page
-37.	Create Contractor Portal page
-38.	Create Employee Portal page
-39.	Create Admin Portal page
-40.	Create Manager Portal page
-41.	Create Owner Portal page
-42.	Add ability to display the corresponding portal type page for the type of user role that is logged in
-43.	Add a popup message on the landing page that reminds the user to visit their portal page for important information
-44.	Create Manage Profiles page and grant access to all logged in users<br>
-  a.	Create subpage for Display functionality<br>
-  b.	Create subpage for Add functionality<br>
-  c.	Create subpage for Update functionality<br>
-  d.	Create subpage for Delete functionality	<br>
-45.	Create Manage Users page and grant access only to Admin users<br>
-  a.	Create subpage for Display functionality<br>
-  b.	Create subpage for Update User Access Level functionality<br>
-  c.	Create subpage for Delete functionality	<br>
-46.	Create Manage Rental Properties page and grant access to Admin and Manager users<br>
-  a.	Create subpage for Display functionality<br>
-  b.	Create subpage for Add functionality<br>
-  c.	Create subpage for Update functionality<br>
-  d.	Create subpage for Delete functionality	<br>
-47.	Create Manage Rental Payments page and grant access to Admin, Manager and Employee users<br>
-  a.	Create subpage for Display All Rental Payments functionality<br>
-  b.	Create subpage for Display Specific Rental Payments functionality based on search criteria<br>
-  c.	Create subpage for Add functionality<br>
-  d.	Create subpage for Update functionality<br>
-  e.	Create subpage for Delete functionality	<br>
-48.	Create Manage Rental Repairs page and grant access to Admin, Manager and Employee users<br>
-  a.	Create subpage for Display functionality<br>
-  b.	Create subpage for Add functionality<br>
-  c.	Create subpage for Update functionality<br>
-  d.	Create subpage for Delete functionality	<br>
-  e.	Grant access to the Add page to all users except contractors <br>
-49.	Create Renter page option to allow downloading of renter lease agreement document
-50.	Create Renter page option to allow downloading of renter parking agreement document
-51.	Create Contractor page option to allow downloading of contractor agreement document
+1.	As a property management company I would like to see a common layout for all website pages to give website users a consistent look and feel
+2.	As a property management company I would like to see a common header for all website pages for a consistent look and feel throughout the website
+3.	As a property management company I would like to see a common footer for all website pages for a consistent look and feel throughout the website
+4.	As a user I would like to be greeted by a rental themed landing page
+5.	As a property management company I would like to see a login box on the landing page that is accessible by everyone
+6.	As a property management company I would like to have a registration button on the landing page that is accessible to everyone
+7.	As a property management company I would like to see the website require login and authentication in order to access all pages except the landing page, registration page, About Us and Contact Us page
+8.	As a property management company I would like to see a page available to everyone where they can register to gain login access to the website
+9.	As a property management company I would like to see a logout button be available on every secured page which will log the user out and redirect them to the landing page
+10.	As I user I would like to be able to view an About Us page that details information about the rental management company
+11.	As a user I would like to see a Contact Us page which details information related to contacting the rental management company
+12.	As a user I would like to see a Privacy Notice page that details privacy information related to the website
+13.	As a user I would like to see a Terms of Use page that details website access and restriction information
+14.	As a user I would like to see hyperlinks to the About Us, Contact Us, Privacy Notice and Terms of Use page in the website’s common footer
+15.	As a property management company I would like newly registered users to be assigned a default role of Renter when they register for the website
+16.	As a user I would like to be able to request the Admin to change my default role to 1 of 5 other roles: Contractor, Employee, Manager, Owner or Admin
+17.	As a property management company I want Renter users to be able to add profile information applicable for Renter users
+18.	As a property management company I want Contractor users to be able to add profile information applicable for Contractor users
+19.	As a property management company I want Employee users to be able to add profile information applicable for Employee users
+20.	As a property management company I want Manager users to be able to add profile information applicable for Manager users
+21.	As a property management company I want Owner users to be able to add profile information applicable for Owner users
+22.	As a property management company I want Admin users to be able to add profile information applicable for Admin users
+23.	As a property management company I would like all users to enter a common set of contact information when creating their profile
+24.	As a property management company I would like all users to enter a common set of employer information when creating their profile
+25.	As a property management company I would like Renter users to enter a set of person details when creating their profile
+26.	As a property management company I would like the profile contact information to include the individual’s address
+27.	As a property management company I would like the profile employer information to include the employer’s address 
+28.	As a property management company I would like the Renter profile personal information to include an individual’s credit card billing address  
+29.	As a property management company I would like the user to have the ability to select the state for each address from a prepopulated list of US states
+30.	As a property management company I want users to have the ability to display, add, update and delete Rental Property information stored in the database
+31.	As a property management company I want users to have the ability to display, add, update and delete Rental Payment information stored in the database
+32.	As a property management company I want users to have the ability to display, add, update and delete Rental Unit Amenity information stored in the database
+33.	As a rental property management company I want Renter users to have their own Renter Portal page
+34.	As a rental property management company I want Contractor users to have their own Contractor Portal page
+35.	As a rental property management company I want Employee users to have their own Employee Portal page
+36.	As a rental property management company I want Manager users to have their own Manager Portal page
+37.	As a rental property management company I want Owner users to have their own Owner Portal page
+38.	As a rental property management company I want Admin users to have their own Admin Portal page
+39.	As a rental property management company I want the website to automatically make available the corresponding portal type page for the user role that is logged in
+40.	As a rental property management company I want users to see a popup message on the home page that reminds the logged in user to visit their portal page for important information
+41.	As a property management company, I want all logged in users to have access to a Manage Profiles page
+42.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them to Display their profile
+43.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Add a profile
+44.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
+45.	From Manage Profiles page I would like logged in users to be able to access a subpage that will allow them the ability to Update their profile
+46.	As a property management company, I want Admin users to have access to an Administrator User Management page
+47.	From the Administrator User Management I would like Admin users to be able to access a subpage that will allow them to Display all users
+48.	From the Administrator User Management page I would like Admin users to be able to access a subpage that will allow them to Update the Access Level for specific users
+49.	From the Administrator User Management page I would like Admin users to be able to access a subpage that will allow them to Delete specific users
+50.	As a property management company I would like Admin and Manager users to have access to a Manage Rental Properties page
+51.	From the Manage Rental Properties page I would like them to be able to access a subpage that will allow them to Display rental properties
+52.	From the Manage Rental Properties page I would like them to be able to access a subpage that will allow them the ability to Add a rental property
+53.	From the Manage Rental Properties page I would like them to be able to access a subpage that will allow them the ability to Update a rental property
+54.	From the Manage Rental Properties page I would like them to be able to access a subpage that will allow them the ability to Update a rental property
+55.	As a rental property management company, I would like a Renter page option to allow downloading of a renter lease agreement document
+56.	As a rental property management company, I would like a Renter page option to allow downloading of a renter parking agreement document
+57.	As a rental property management company, I would like a Contractor page option to allow downloading of a contractor agreement document
+
+
+
+
+
+
+
+
+
+
 
  
  
