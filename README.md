@@ -17,17 +17,16 @@
  <br>
  The website was built using the Spring MVC framework utilizing controllers and DAO patterns that communicate with a MySQL backend using a Hibernate ORM framework.  The website
  is secured using Spring Security authentication and authorization functionality utilizing user roles.  The view layer consists of JSP pages that are styled using CSS3.  
- 
+ <br> <br>
  A user is initially presented with a landing page where they can login or register for access.  If registering, they are initially given a default role of "RENTER" which is
  the role with the least access.  Administrators may change a user's role to any of 5 other roles: "CONTRACTOR", "EMPLOYEE", "MANAGER", "OWNER" or "ADMIN".  Spring Security
  functionality restricts access to parts of the website and specific functionality based on the user's role.  If a user attempts to access a restricted resource, they are
  presented with a custom access denied error page.
  
   
- <br>
+ <br> <br>
  The ABC Rental Property Management Website Creation project entailed the following user stories:
-
- User Stories:
+<br> <br>
 1.	As a property management company I would like to see a common layout for all website pages to give website users a consistent look and feel
 2.	As a property management company I would like to see a common header for all website pages for a consistent look and feel throughout the website
 3.	As a property management company I would like to see a common footer for all website pages for a consistent look and feel throughout the website
