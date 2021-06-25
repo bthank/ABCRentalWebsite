@@ -1,7 +1,7 @@
 # ABCRentalWebsite
- My ABCRentalWebsite Git repository
+ ABCRentalWebsite Git repository <br>
  by Binu Thankachan
- 
+  <br> <br>
  This is a dynamic website Spring MVC project built using the following technologies:
  - Java 8
  - Spring MVC
@@ -14,7 +14,7 @@
  - Hibernate ORM
  - JSTL
  - SpEL
-
+ <br>
  The website was built using the Spring MVC framework utilizing controllers and DAO patterns that communicate with a MySQL backend using a Hibernate ORM framework.  The website
  is secured using Spring Security authentication and authorization functionality utilizing user roles.  The view layer consists of JSP pages that are styled using CSS3.  
  
@@ -24,8 +24,8 @@
  presented with a custom access denied error page.
  
   
- 
- The ABC Rental Property Management Website Creation project was entailed the following user stories:
+ <br>
+ The ABC Rental Property Management Website Creation project entailed the following user stories:
 
  User Stories:
 1.	As a property management company I would like to see a common layout for all website pages to give website users a consistent look and feel
