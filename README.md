@@ -132,3 +132,7 @@
  <h3>Update Renter Profile page</h3>
 <br><br>
 <img src="https://user-images.githubusercontent.com/28652664/123499863-b681b100-d607-11eb-8835-157cbe829abe.png"/><br><br>
+   <br><br>
+ <h3>Add Rental Repair page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499914-03658780-d608-11eb-805c-5e5e36caa4cf.png"/><br><br>
