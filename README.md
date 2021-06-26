@@ -25,7 +25,7 @@
  
   
  <br> <br>
- The ABC Rental Property Management Website Creation project entailed the following user stories:
+ <h2>User Stories:</h2>
 <br> <br>
 1.	As a property management company I would like to see a common layout for all website pages to give website users a consistent look and feel
 2.	As a property management company I would like to see a common header for all website pages for a consistent look and feel throughout the website
@@ -88,8 +88,18 @@
 
 
 
+<h2>Database Schema:</h 2>
+ <br><br>
+ ![image](https://user-images.githubusercontent.com/28652664/123499172-bcc15e80-d602-11eb-9f27-f357b16ae5c9.png)
 
 
+ <h2>Workflow Diagram:</h2>
+ <br><br>
+ ![image](https://user-images.githubusercontent.com/28652664/123499209-10cc4300-d603-11eb-99a5-087b53de12a5.png)
+
+
+<h2>Website Images:</h2>
+<br><br>
 
 
 
