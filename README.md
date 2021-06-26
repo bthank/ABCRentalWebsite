@@ -99,7 +99,7 @@
 
 
 
-<h2>A Few Website Pages:</h2>
+<h2>About the Website:</h2>
  <br><br>
  <h3>Landing Page with Spring Security authentication</h3>
 <br><br>
@@ -109,13 +109,26 @@
 <br><br>
 <img src="https://user-images.githubusercontent.com/28652664/123499654-3f97e880-d606-11eb-8b91-919275550c3f.png"/><br><br>
  <br><br>
- <h3>Landing Page</h3>
+ <h3>Roles Used</h3>
 <br><br>
-<img src=""/><br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499697-9271a000-d606-11eb-822d-28fa86d0d53d.png"/><br><br>
   <br><br>
- <h3>Landing Page</h3>
+ <h3>Home page after successful login for a Renter user</h3>
 <br><br>
-<img src=""/><br><br>
- 
- 
- 
+<img src="https://user-images.githubusercontent.com/28652664/123499714-b634e600-d606-11eb-823f-646d06444648.png"/><br><br>
+   <br><br>
+ <h3>Add Renter Profile page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499772-0b70f780-d607-11eb-9c9a-0fd4f0a2db96.png"/><br><br>
+   <br><br>
+ <h3>Java Server Side form validation</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499811-42dfa400-d607-11eb-9551-cffb57fe031b.png"/><br><br>
+    <br><br>
+ <h3>Display Renter Profile page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499825-660a5380-d607-11eb-904a-95344f6e51b5.png"/><br><br>
+    <br><br>
+ <h3>Update Renter Profile page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123499863-b681b100-d607-11eb-8835-157cbe829abe.png"/><br><br>
