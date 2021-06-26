@@ -136,3 +136,11 @@
  <h3>Add Rental Repair page</h3>
 <br><br>
 <img src="https://user-images.githubusercontent.com/28652664/123499914-03658780-d608-11eb-805c-5e5e36caa4cf.png"/><br><br>
+   <br><br>
+ <h3>About Us page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123500136-d5814280-d609-11eb-9ac9-c0b4ec512a9f.png"/><br><br>
+    <br><br>
+ <h3>Contact Us page</h3>
+<br><br>
+<img src="https://user-images.githubusercontent.com/28652664/123500148-f0ec4d80-d609-11eb-80d3-d4e37ef663a2.png"/><br><br>
