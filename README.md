@@ -144,3 +144,10 @@
  <h3>Contact Us page</h3>
 <br><br>
 <img src="https://user-images.githubusercontent.com/28652664/123500148-f0ec4d80-d609-11eb-80d3-d4e37ef663a2.png"/><br><br>
+ <br><br>
+ <h3>Technical Challenges</h3>
+ - Wanted to use AJAX functionality to avoid full page reloads, but didn’t have time to design and implement.<br>
+ - Wanted to use REST Web Services.  Again, didn’t have time to design and implement it.<br>
+ - Wanted to learn a Front End framework like Angular or React and use it for the site, but it will have to be done in version 2. <br>
+
+ 
