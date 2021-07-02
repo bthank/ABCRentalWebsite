@@ -16,6 +16,7 @@ public class EmployerInfoServiceImpl implements EmployerInfoService{
 	@Autowired
 	private EmployerInfoDao employerInfoDao;
 
+	// method for Employer Info find by id service
 	@Override
 	@Transactional
 	public EmployerInfo findEmployerInfoById(int id) {
@@ -25,6 +26,7 @@ public class EmployerInfoServiceImpl implements EmployerInfoService{
 
 	}
 
+	// method for Employer Info save service
 	@Override
 	@Transactional
 	public void save(EmployerInfo employerInfo) {
@@ -33,6 +35,7 @@ public class EmployerInfoServiceImpl implements EmployerInfoService{
 		
 	}
 
+	// method for Employer Info delete service
 	@Override
 	@Transactional
 	public void delete(EmployerInfo employerInfo) {

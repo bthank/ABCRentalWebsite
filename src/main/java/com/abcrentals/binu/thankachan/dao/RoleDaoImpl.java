@@ -24,7 +24,7 @@ public class RoleDaoImpl implements RoleDao {
 	private SessionFactory sessionFactory;
 	
 	
-
+	// dao method for role find by role id service
 	@Override
 	public Role findRoleById(long id) {
 
@@ -46,7 +46,7 @@ public class RoleDaoImpl implements RoleDao {
 		return theRole;
 	}
 
-
+	// dao method for role find by role name service
 	@Override
 	public Role findRoleByName(String theRoleName) {
 
@@ -68,6 +68,7 @@ public class RoleDaoImpl implements RoleDao {
 		return theRole;
 	}
 
+	// dao method for role save service
 	@Override
 	public void save(Role role) {
    	
@@ -78,6 +79,7 @@ public class RoleDaoImpl implements RoleDao {
 		currentSession.saveOrUpdate(role);
 	}
 
+	// dao method for role delete service
 	@Override
 	public void delete(Role role) {
 	   	

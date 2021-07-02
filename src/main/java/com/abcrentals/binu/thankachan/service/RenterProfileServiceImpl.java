@@ -17,6 +17,7 @@ public class RenterProfileServiceImpl implements RenterProfileService {
 	RenterProfileDao renterProfileDao;
 	
 	
+	// method for Renter Profile find by id service
 	@Override
 	@Transactional
 	public RenterProfile findById(long id) {
@@ -24,6 +25,7 @@ public class RenterProfileServiceImpl implements RenterProfileService {
 		return renterProfileDao.findById(id);
 	}
 
+	// method for Renter Profile find by user id service
 	@Override
 	@Transactional
 	public RenterProfile findByUserId(long userId) {
@@ -31,6 +33,7 @@ public class RenterProfileServiceImpl implements RenterProfileService {
 		return renterProfileDao.findByUserId(userId);
 	}
 
+	// method for Renter Profile find all renter profiles service
 	@Override
 	@Transactional
 	public List<RenterProfile> findAllRenterProfiles() {
@@ -38,6 +41,7 @@ public class RenterProfileServiceImpl implements RenterProfileService {
 		return renterProfileDao.findAllRenterProfiles();
 	}
 
+	// method for Renter Profile save service 
 	@Override
 	@Transactional
 	public void save(RenterProfile renterProfile) {
@@ -45,6 +49,7 @@ public class RenterProfileServiceImpl implements RenterProfileService {
 		renterProfileDao.save(renterProfile);
 	}
 
+	// method for Renter Profile delete service
 	@Override
 	@Transactional
 	public void delete(RenterProfile renterProfile) {

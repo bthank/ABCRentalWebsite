@@ -37,6 +37,7 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
     
+    // init binder method to register a custom editor
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		
@@ -45,6 +46,7 @@ public class RegistrationController {
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}	
 	
+    // handler method to display the registration form
 	@GetMapping("/showRegistrationForm")
 	public String showMyLoginPage(Model theModel) {
 		
@@ -53,6 +55,7 @@ public class RegistrationController {
 		return "registration-form";
 	}
 
+    // handler method to process the registration form
 	@PostMapping("/processRegistrationForm")
 	public String processRegistrationForm(
 				@Valid @ModelAttribute("crmUser") CrmUser theCrmUser, 

@@ -30,66 +30,10 @@
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/main.css">
 
 
-
-
-
-<style>
-.fakeimg {
-	height: 200px;
-	background: #aaa;
-}
-
-.box img {
-	width: 100%;
-	height: 100%;
-}
-
-.box1 img {
-	object-fit: cover;
-}
-
-.box2 img {
-	object-fit: contain;
-}
-
-.box3 img {
-	object-fit: fill;
-}
-
-.ifont {
-	color: white;
-}
-
-.fas {
-	background: radial-gradient(white 50%, transparent 50%);
-}
-
-li {
-	font-weight: bold;
-	color: white;
-}
-
-nav {
-	text-align: center;
-}
-
-.intro {
-	height: 100%;
-	margin: 20px 20px 20px 20px;
-}
-
-.gradient-custom {
-	/* fallback for old browsers */
-	
-}
-
-.error {
-	color: red;
-	font-weight: bold;
-}
-</style>
 </head>
 <body>
 
@@ -143,9 +87,9 @@ nav {
 													<br>
 													<form:select path="id">
 														<form:option value="0">-- Select Rental Payment --</form:option>
-														<c:if test="${not empty customRentalPaymentList}">
-															<form:options items="${customRentalPaymentList}"
-																></form:options>
+														<c:if test="${not empty rentalPayments}">
+															<form:options items="${rentalPayments}"
+																itemValue="id" itemLabel="id" ></form:options>
 														</c:if>
 													</form:select>
 													<br>

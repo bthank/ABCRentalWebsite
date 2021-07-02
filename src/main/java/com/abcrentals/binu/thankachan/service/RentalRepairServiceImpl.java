@@ -17,6 +17,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 	private RentalRepairDao rentalRepairDao;
 	
 	
+	// method for Rental Repair find by id service
 	@Override
 	@Transactional
 	public RentalRepair findById(long id) {
@@ -24,6 +25,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 		return rentalRepairDao.findById(id);
 	}
 
+	// method for Rental Repair find by rental unit id and rental unit no service
 	@Override
 	@Transactional
 	public RentalRepair findByRentalUnitIdAndRentalUnitNo(int rentalUnitId, int rentalUnitNo) {
@@ -31,6 +33,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 		return rentalRepairDao.findByRentalUnitIdAndRentalUnitNo(rentalUnitId, rentalUnitNo);
 	}
 
+	// method for Rental Repair find all rental repairs by repair status service
 	@Override
 	@Transactional
 	public List<RentalRepair> findAllRentalRepairsByRepairStatus(int repairStatus) {
@@ -38,6 +41,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 		return rentalRepairDao.findAllRentalRepairsByRepairStatus(repairStatus);
 	}
 
+	// method for Rental Repair find all rental repairs service
 	@Override
 	@Transactional
 	public List<RentalRepair> findAllRentalRepairs() {
@@ -45,6 +49,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 		return rentalRepairDao.findAllRentalRepairs();
 	}
 	
+	// method for Rental Repair save service
 	@Override
 	@Transactional
 	public void save(RentalRepair rentalRepair) {
@@ -53,6 +58,7 @@ public class RentalRepairServiceImpl implements RentalRepairService{
 		
 	}
 
+	// method for Rental Repair delete service
 	@Override
 	@Transactional
 	public void delete(RentalRepair rentalRepair) {

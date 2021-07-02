@@ -130,22 +130,44 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Renter Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/renter/showDisplayRenterProfilePage">												
-												<button type="button" class="btn btn-success btn-size">Display Renter Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/renter/showAddRenterProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Renter Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/renter/showUpdateRenterProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Renter Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/renter/showDeleteRenterProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Renter Profile</button>												
-											</a><br><br>
+											
+											<c:if test="${not empty renterProfile}" >
+											
+	  											<a
+													href="${pageContext.request.contextPath}/renter/showDisplayRenterProfilePage">												
+													<button type="button" class="btn btn-success btn-size">Display Renter Profile</button>
+												</a><br><br> 
+  
+  											</c:if>
+ 
+											
+											
+											<c:if test="${ empty renterProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/renter/showAddRenterProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Renter Profile</button>
+												</a><br><br> 
+																					
+											</c:if>
+											
+											
+											
+											<c:if test="${not empty renterProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/renter/showUpdateRenterProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Renter Profile</button>
+												</a><br><br> 
+											
+											
+												<a
+													href="${pageContext.request.contextPath}/renter/showDeleteRenterProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Renter Profile</button>												
+												</a><br><br>
+											
+											</c:if>
+											
 
 										</div>
 									</security:authorize>
@@ -154,22 +176,40 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Contractor Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/contractor/showDisplayContractorProfilePage">
-												<button type="button" class="btn btn-success btn-size">Display Contractor Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/contractor/showAddContractorProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Contractor Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/contractor/showUpdateContractorProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Contractor Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/contractor/showDeleteContractorProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Contractor Profile</button>
-											</a><br><br>
+											
+											<c:if test="${not empty contractorProfile}" >
+
+												<a
+													href="${pageContext.request.contextPath}/contractor/showDisplayContractorProfilePage">
+													<button type="button" class="btn btn-success btn-size">Display Contractor Profile</button>
+												</a><br><br> 
+
+											</c:if>
+											
+											<c:if test="${empty contractorProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/contractor/showAddContractorProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Contractor Profile</button>
+												</a><br><br> 										
+											
+											</c:if>
+											
+											
+											<c:if test="${not empty contractorProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/contractor/showUpdateContractorProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Contractor Profile</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/contractor/showDeleteContractorProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Contractor Profile</button>
+												</a><br><br>
+											
+											</c:if>
+
+											
 
 										</div>
 
@@ -179,22 +219,41 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Employee Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/employee/showDisplayEmployeeProfilePage">
-												<button type="button" class="btn btn-success btn-size">Display Employee Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/employee/showAddEmployeeProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Employee Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/employee/showUpdateEmployeeProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Employee Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/employee/showDeleteEmployeeProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Employee Profile</button>
-											</a><br><br>
+											
+											
+											<c:if test="${not empty employeeProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/employee/showDisplayEmployeeProfilePage">
+													<button type="button" class="btn btn-success btn-size">Display Employee Profile</button>
+												</a><br><br> 
+											
+											</c:if>					
+											
+											
+											<c:if test="${ empty employeeProfile}" >
+											
+												<a
+													href="${pageContext.request.contextPath}/employee/showAddEmployeeProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Employee Profile</button>
+												</a><br><br> 
+																						
+											</c:if>						
+											
+											
+											
+											<c:if test="${not empty employeeProfile}" >
+																						
+												<a
+													href="${pageContext.request.contextPath}/employee/showUpdateEmployeeProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Employee Profile</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/employee/showDeleteEmployeeProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Employee Profile</button>
+												</a><br><br>
+											
+											</c:if>
 
 										</div>
 
@@ -204,22 +263,40 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Admin Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/admin/showDisplayAdminProfilePage">
-												<button type="button" class="btn btn-success btn-size">Display Admin Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/admin/showAddAdminProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Admin Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/admin/showUpdateAdminProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Admin Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/admin/showDeleteAdminProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Admin Profile</button>
-											</a><br><br>
+											
+											
+											<c:if test="${not empty adminProfile}" >
+																						
+												<a
+													href="${pageContext.request.contextPath}/admin/showDisplayAdminProfilePage">
+													<button type="button" class="btn btn-success btn-size">Display Admin Profile</button>
+												</a><br><br> 
+											
+											</c:if>
+
+											
+											<c:if test="${ empty adminProfile}" >
+																						
+											
+												<a
+													href="${pageContext.request.contextPath}/admin/showAddAdminProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Admin Profile</button>
+												</a><br><br> 
+											
+											</c:if>
+											
+											<c:if test="${not empty adminProfile}" >
+																																	
+												<a
+													href="${pageContext.request.contextPath}/admin/showUpdateAdminProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Admin Profile</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/admin/showDeleteAdminProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Admin Profile</button>
+												</a><br><br>
+											
+											</c:if>
 
 										</div>
 
@@ -229,22 +306,40 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Manager Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/manager/showDisplayManagerProfilePage">
-												<button type="button" class="btn btn-success btn-size">Display Manager Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/manager/showAddManagerProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Manager Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/manager/showUpdateManagerProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Manager Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/manager/showDeleteManagerProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Manager Profile</button>
-											</a><br><br>
+											
+											
+											
+											<c:if test="${not empty managerProfile}" >
+																																												
+												<a
+													href="${pageContext.request.contextPath}/manager/showDisplayManagerProfilePage">
+													<button type="button" class="btn btn-success btn-size">Display Manager Profile</button>
+												</a><br><br> 
+											
+											</c:if>
+
+											
+											<c:if test="${empty managerProfile}" >
+																																																							
+												<a
+													href="${pageContext.request.contextPath}/manager/showAddManagerProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Manager Profile</button>
+												</a><br><br> 
+											
+											</c:if>											
+											
+											<c:if test="${not empty managerProfile}" >
+																																																							
+												<a
+													href="${pageContext.request.contextPath}/manager/showUpdateManagerProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Manager Profile</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/manager/showDeleteManagerProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Manager Profile</button>
+												</a><br><br>
+												
+											</c:if>
 
 										</div>
 
@@ -254,22 +349,39 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading">Owner Profile</p>
-											<a
-												href="${pageContext.request.contextPath}/owner/showDisplayOwnerProfilePage">
-												<button type="button" class="btn btn-success btn-size">Display Owner Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/owner/showAddOwnerProfilePage">
-												<button type="button" class="btn btn-primary btn-size">Add Owner Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/owner/showUpdateOwnerProfilePage">
-												<button type="button" class="btn btn-warning btn-size">Update Owner Profile</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/owner/showDeleteOwnerProfilePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Owner Profile</button>
-											</a><br><br>
+											
+											<c:if test="${not empty ownerProfile}" >
+																																																								
+												<a
+													href="${pageContext.request.contextPath}/owner/showDisplayOwnerProfilePage">
+													<button type="button" class="btn btn-success btn-size">Display Owner Profile</button>
+												</a><br><br> 
+												
+											</c:if>	
+												
+											
+											<c:if test="${empty ownerProfile}" >
+																																																																			
+												<a
+													href="${pageContext.request.contextPath}/owner/showAddOwnerProfilePage">
+													<button type="button" class="btn btn-primary btn-size">Add Owner Profile</button>
+												</a><br><br> 
+
+											</c:if>											
+											
+											<c:if test="${not empty ownerProfile}" >
+																																																																			
+												<a
+													href="${pageContext.request.contextPath}/owner/showUpdateOwnerProfilePage">
+													<button type="button" class="btn btn-warning btn-size">Update Owner Profile</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/owner/showDeleteOwnerProfilePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Owner Profile</button>
+												</a><br><br>
+											
+											</c:if>
+
 
 										</div>
 									</security:authorize>

@@ -80,25 +80,32 @@ public class WelcomeController {
 		return "owner/owner-page";
 	}	
 	
+	// add request mapping for /privacy-notice
+		
 	@GetMapping("/privacy-notice")
 	public String showPrivacyNotice() {
 		
 		return "common/privacy-notice";
 	}	
 	
-
+	// add request mapping for /terms-of-use
+	
 	@GetMapping("/terms-of-use")
 	public String showTermsOfUse() {
 		
 		return "common/terms-of-use";
 	}	
-
+	
+	// add request mapping for /about-us
+	
 	@GetMapping("/about-us")
 	public String showAboutUsPage() {
 		
 		return "about-us";
 	}	
 
+	// add request mapping for /contact-us
+	
 	@GetMapping("/contact-us")
 	public String showContactUs() {
 		

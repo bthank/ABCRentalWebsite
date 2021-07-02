@@ -26,6 +26,7 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	// dao method for rental profile find by id service
 	@Override
 	public RenterProfile findById(long id) {
 		   
@@ -46,6 +47,7 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 		   
 	}
 
+	// dao method for rental profile find by user id service
 	@Override
 	public RenterProfile findByUserId(long userId) {
 		
@@ -68,10 +70,14 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 			theRenterProfile = null;
 		}
 
-		System.out.println("b90:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile: " + theRenterProfile.getId() + " | " + theRenterProfile.getTypeOfProfile());
-		System.out.println("b91:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile.toString(): " + theRenterProfile.toString());
-		System.out.println("b92:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile: " + theRenterProfile.getId() + " | " + theRenterProfile.getTypeOfProfile() + " | " + theRenterProfile.getContactInfo().getId() + " | " + theRenterProfile.getContactInfo().getFirstName() + " " + theRenterProfile.getContactInfo().getLastName() + " |HPhno: " + theRenterProfile.getContactInfo().getHomePhoneNo() + " |WPhNo: " + theRenterProfile.getContactInfo().getWorkPhoneNo());
-		
+		if (theRenterProfile != null) {
+			System.out.println("b91:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile.toString(): " + theRenterProfile.toString());
+			System.out.println("b92:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile: " + theRenterProfile.getId() + " | " + theRenterProfile.getTypeOfProfile());
+			System.out.println("b93:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile: " + theRenterProfile.getId() + " | " + theRenterProfile.getTypeOfProfile() + " | " + theRenterProfile.getContactInfo().getId() + " | " + theRenterProfile.getContactInfo().getFirstName() + " " + theRenterProfile.getContactInfo().getLastName() + " |HPhno: " + theRenterProfile.getContactInfo().getHomePhoneNo() + " |WPhNo: " + theRenterProfile.getContactInfo().getWorkPhoneNo());
+		}
+		else {
+			System.out.println("z94:  Exiting RenterProfileDaoImpl  findByUserId() method   theRenterProfile: is null" );								
+		}
 		System.out.println("b99:  Exiting RenterProfileDaoImpl  findByUserId() method");
 
 		return theRenterProfile;		
@@ -79,7 +85,7 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 	}
 
 	
-
+	// dao method for rental profile find all renter profiles service
 	@Override
 	public List<RenterProfile> findAllRenterProfiles() {
 		
@@ -99,11 +105,12 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 		}
 
 		if (theRenterProfileList != null) {
-			System.out.println("c90:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   theRenterProfileList: " + theRenterProfileList.get(0).getId() + " | " + theRenterProfileList.get(0).getTypeOfProfile());
-			System.out.println("c91:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   theRenterProfileList.toString(): " + theRenterProfileList.get(0).toString());
-			System.out.println("c92:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   theRenterProfileList: " + theRenterProfileList.get(0).getId() + " | " + theRenterProfileList.get(0).getTypeOfProfile() + " | " + theRenterProfileList.get(0).getContactInfo().getId() + " | " + theRenterProfileList.get(0).getContactInfo().getFirstName() + " " + theRenterProfileList.get(0).getContactInfo().getLastName() + " |HPhno: " + theRenterProfileList.get(0).getContactInfo().getHomePhoneNo() + " |WPhNo: " + theRenterProfileList.get(0).getContactInfo().getWorkPhoneNo());		
+			for (RenterProfile renterProf: theRenterProfileList) {
+				System.out.println("c90:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   renterProf.getUser().getRoles().toString(): " + renterProf.getUser().getRoles().toString() );				
+				System.out.println("c91:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   renterProf.toString(): " + renterProf.toString() );
+			}
 		} else {
-			System.out.println("c90:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   theRenterProfileList is null");
+			System.out.println("c93:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method   theRenterProfileList is null");
 		}
 		
 		System.out.println("c99:  Exiting RenterProfileDaoImpl  findAllRenterProfiles() method");
@@ -112,7 +119,7 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
 		
 	}
 	
-	
+	// dao method for rental profile save service
 	@Override
 	public void save(RenterProfile renterProfile) {
     	
@@ -124,6 +131,7 @@ public class RenterProfileDaoImpl implements RenterProfileDao{
     	
 	}
 
+	// dao method for rental profile delete service
 	@Override
 	public void delete(RenterProfile renterProfile) {
     	

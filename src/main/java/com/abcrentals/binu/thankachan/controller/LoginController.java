@@ -19,18 +19,17 @@ public class LoginController {
 	
     private Logger logger = Logger.getLogger(getClass().getName());
     
-
+    // handler method to display the login page
 	@GetMapping("/showMyLoginPage")
 	public String showMyLoginPage() {
 		
-		// return "plain-login";
+		// return "login-page";
 
 		return "login-page";
 		
 	}
 	
-	// add request mapping for /access-denied
-	
+	// add request mapping for /access-denied	
 	@GetMapping("/access-denied")
 	public String showAccessDenied() {
 		

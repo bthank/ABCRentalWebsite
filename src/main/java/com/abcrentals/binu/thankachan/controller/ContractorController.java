@@ -71,7 +71,7 @@ public class ContractorController {
 	private ContractorProfileService contractorProfileService;
 
 	
-	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -92,7 +92,7 @@ public class ContractorController {
 	    return countries;
 	}  	
 
-	
+	// handler method to display the add contractor profile page
 	@GetMapping("/showAddContractorProfilePage")
 	public ModelAndView showAddContractorProfilePage(HttpServletRequest request,Model theModel) {
 		
@@ -121,6 +121,7 @@ public class ContractorController {
 		return mv;
 	}
 	
+	// handler method to process add for the add contractor profile form
 	@PostMapping("/processAddContractorProfileForm")
 	public ModelAndView processAddContractorProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("contractorUserProfile") ContractorUserProfile theContractorUserProfile, 
@@ -253,7 +254,7 @@ public class ContractorController {
 
 
 	
-	
+	// handler method to display the update contractor profile page
 	@GetMapping("/showUpdateContractorProfilePage")
 	public ModelAndView showUpdateContractorProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("a1: Entering ContractorController   showUpdateContractorProfilePage() method");
@@ -347,7 +348,7 @@ public class ContractorController {
 	
 	
 	
-	
+	// handler method to process the update contractor profile form
 	@PostMapping("/processUpdateContractorProfileForm")
 	public ModelAndView processUpdateContractorProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("contractorUserProfile") ContractorUserProfile theContractorUserProfile, 
@@ -494,7 +495,7 @@ public class ContractorController {
 
 
 	
-	
+	// handler method to display the display contractor profile page
 	@GetMapping("/showDisplayContractorProfilePage")
 	public ModelAndView showDisplayContractorProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("a1: Entering ContractorController   showDisplayContractorProfilePage() method");
@@ -587,10 +588,11 @@ public class ContractorController {
 
 	
 	
-	
+	// handler method to display the delete contractor profile page
 	@PostMapping("/showDeleteContractorProfilePage")
 	public ModelAndView showDeleteContractorProfilePage(HttpServletRequest request) {
 		
+		// TODO -- complete the rest of this method in the future
 
 		ModelAndView mv = new ModelAndView();
 		return mv;
@@ -598,6 +600,6 @@ public class ContractorController {
 	}
 	
 	
-	
+	// TODO --  finish the delete contractor profile processing in the future
 	
 }

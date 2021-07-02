@@ -16,7 +16,7 @@ public class OwnerProfileServiceImpl implements OwnerProfileService{
 	@Autowired 
 	OwnerProfileDao ownerProfileDao;
 	
-	
+	// method for Owner Profile find by id service 
 	@Override
 	@Transactional
 	public OwnerProfile findById(long id) {
@@ -24,6 +24,7 @@ public class OwnerProfileServiceImpl implements OwnerProfileService{
 		return ownerProfileDao.findById(id);
 	}
 
+	// method for Owner Profile find by user id service
 	@Override
 	@Transactional
 	public OwnerProfile findByUserId(long userId) {
@@ -31,6 +32,7 @@ public class OwnerProfileServiceImpl implements OwnerProfileService{
 		return ownerProfileDao.findByUserId(userId);
 	}
 
+	// method for Owner Profile find all owner profiles service
 	@Override
 	@Transactional
 	public List<OwnerProfile> findAllOwnerProfiles() {
@@ -38,6 +40,7 @@ public class OwnerProfileServiceImpl implements OwnerProfileService{
 		return ownerProfileDao.findAllOwnerProfiles();
 	}
 	
+	// method for Owner Profile save service
 	@Override
 	@Transactional
 	public void save(OwnerProfile ownerProfile) {
@@ -46,6 +49,7 @@ public class OwnerProfileServiceImpl implements OwnerProfileService{
 		
 	}
 
+	// method for Owner Profile delete service
 	@Override
 	@Transactional
 	public void delete(OwnerProfile ownerProfile) {

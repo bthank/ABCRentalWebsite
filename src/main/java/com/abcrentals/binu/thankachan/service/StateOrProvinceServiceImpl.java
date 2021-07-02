@@ -18,6 +18,7 @@ public class StateOrProvinceServiceImpl implements StateOrProvinceService {
 	private StateOrProvinceDao stateOrProvinceDao;
 
 
+	// method for StateOrProvince find by state or province service
 	@Override
 	@Transactional
 	public int findStateOrProvinceIndex(String stateOrProvince) {
@@ -26,6 +27,7 @@ public class StateOrProvinceServiceImpl implements StateOrProvinceService {
 		
 	}
 
+	// method for StateOrProvince find by id service
 	@Override
 	@Transactional
 	public StateOrProvince findById(int id) {
@@ -34,6 +36,7 @@ public class StateOrProvinceServiceImpl implements StateOrProvinceService {
 		
 	}
 	
+	// method for StateOrProvince find by country service
 	@Override
 	@Transactional
 	public List<StateOrProvince> findByCountry(String theCountry){
@@ -42,6 +45,7 @@ public class StateOrProvinceServiceImpl implements StateOrProvinceService {
 		 
 	}
 
+	// method for StateOrProvince save service 
 	@Override
 	@Transactional
 	public void save(StateOrProvince theStateOrProvince){
@@ -51,6 +55,7 @@ public class StateOrProvinceServiceImpl implements StateOrProvinceService {
 		
 	}
 
+	// method for StateOrProvince delete service 
 	@Override
 	@Transactional
 	public void delete(StateOrProvince theStateOrProvince) {

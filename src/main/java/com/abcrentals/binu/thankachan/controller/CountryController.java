@@ -29,6 +29,7 @@ public class CountryController {
 	@Autowired
 	private CountryService countryService;
 
+	// method to load countries list as model attribute
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries() {
 

@@ -25,6 +25,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 		
+	// dao method for contractor profile find by id service  
 	@Override
 	public ContractorProfile findById(long id) {
 		   
@@ -45,6 +46,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 		   
 	}
 
+	// dao method for contractor profile find by user id service
 	@Override
 	public ContractorProfile findByUserId(long userId) {
 		
@@ -71,7 +73,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 				System.out.println("z91:  Exiting ContractorProfileDaoImpl  findByUserId() method   theContractorProfile.toString(): " + theContractorProfile.toString());
 				System.out.println("z92:  Exiting ContractorProfileDaoImpl  findByUserId() method   theContractorProfile: " + theContractorProfile.getId() + " | " + theContractorProfile.getTypeOfProfile() + " | " + theContractorProfile.getContactInfo().getId() + " | " + theContractorProfile.getContactInfo().getFirstName() + " " + theContractorProfile.getContactInfo().getLastName() + " |HPhno: " + theContractorProfile.getContactInfo().getHomePhoneNo() + " |WPhNo: " + theContractorProfile.getContactInfo().getWorkPhoneNo());				
 			} else {
-				System.out.println("z92:  Exiting ContractorProfileDaoImpl  findByUserId() method   theContractorProfile: is null" );								
+				System.out.println("z93:  Exiting ContractorProfileDaoImpl  findByUserId() method   theContractorProfile: is null" );								
 			}
 			
 			System.out.println("z99:  Exiting ContractorProfileDaoImpl  findByUserId() method");
@@ -80,6 +82,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 		   
 	}
 
+	// dao method for contractor profile find all contractor profiles service
 	@Override
 	public List<ContractorProfile> findAllContractorProfiles() {
 		
@@ -112,7 +115,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 	   
 	}
 	
-
+	// dao method for contractor profile save service
 	@Override
 	public void save(ContractorProfile contractorProfile) {
 	   	
@@ -125,6 +128,7 @@ public class ContractorProfileDaoImpl implements ContractorProfileDao{
 		
 	}
 
+	// dao method for contractor profile delete service
 	@Override
 	public void delete(ContractorProfile contractorProfile) {
 	   	

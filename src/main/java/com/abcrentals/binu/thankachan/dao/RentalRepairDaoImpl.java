@@ -25,6 +25,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 		
+	// dao method for rental repair find by id service 
 	@Override
 	public RentalRepair findById(long id) {
 	   	
@@ -56,7 +57,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
 		
 	}
 
-	
+	// dao method for rental repair find by rental unit id and rental unit no service
 	@Override
 	public RentalRepair findByRentalUnitIdAndRentalUnitNo(int rentalUnitId, int rentalUnitNo) {
 	   	
@@ -89,7 +90,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
  		
 	}
 	
-	
+	// dao method for rental repair find all rental repairs by repair status service
 	@Override
 	public List<RentalRepair> findAllRentalRepairsByRepairStatus(int repairStatus){
 		
@@ -124,7 +125,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
 		return rentailRepairList;
 	}
 	
-
+	// dao method for rental repair find all rental repairs service
 	@Override
 	public List<RentalRepair> findAllRentalRepairs() {
 		
@@ -158,7 +159,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
 		return rentailRepairList;
 	}
 	
-	
+	// dao method for rental repair save service
 	@Override
 	public void save(RentalRepair rentalRepair) {
 		 
@@ -170,7 +171,7 @@ public class RentalRepairDaoImpl implements RentalRepairDao {
 
 	}
 
-
+	// dao method for rental repair delete service
 	@Override
 	public void delete(RentalRepair rentalRepair) {
 		 

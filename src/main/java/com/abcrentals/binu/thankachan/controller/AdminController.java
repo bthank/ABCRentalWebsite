@@ -71,7 +71,7 @@ public class AdminController {
 	private AdminProfileService adminProfileService;
 
 	
-	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -92,7 +92,7 @@ public class AdminController {
 	    return countries;
 	}  	
 
-	
+	// handler method to display the add admin profile page
 	@GetMapping("/showAddAdminProfilePage")
 	public ModelAndView showAddAdminProfilePage(HttpServletRequest request,Model theModel) {
 		
@@ -121,6 +121,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// handler method to process the add for the add admin profile form page
 	@PostMapping("/processAddAdminProfileForm")
 	public ModelAndView processAddAdminProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("adminUserProfile") AdminUserProfile theAdminUserProfile, 
@@ -253,7 +254,7 @@ public class AdminController {
 
 
 	
-	
+	// handler method to display the update admin profile page
 	@GetMapping("/showUpdateAdminProfilePage")
 	public ModelAndView showUpdateAdminProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("d1a: Entering AdminController   showUpdateAdminProfilePage() method");
@@ -347,7 +348,7 @@ public class AdminController {
 	
 	
 	
-	
+	// handler method to process the update for the admin profile form
 	@PostMapping("/processUpdateAdminProfileForm")
 	public ModelAndView processUpdateAdminProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("adminUserProfile") AdminUserProfile theAdminUserProfile, 
@@ -494,7 +495,7 @@ public class AdminController {
 
 
 	
-	
+	// handler method to display the display admin profile page
 	@GetMapping("/showDisplayAdminProfilePage")
 	public ModelAndView showDisplayAdminProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("f1a: Entering AdminController   showDisplayAdminProfilePage() method");
@@ -587,17 +588,18 @@ public class AdminController {
 
 	
 	
-	
+	// handler method to display the delete admin profile page
 	@PostMapping("/showDeleteAdminProfilePage")
 	public ModelAndView showDeleteAdminProfilePage(HttpServletRequest request) {
 		
-
+		// TODO -- complete the rest of this method in the future
+		
 		ModelAndView mv = new ModelAndView();
 		return mv;
 
 	}
 	
-
+	// TODO --  finish the delete admin profile processing in the future
 	
 	
 	

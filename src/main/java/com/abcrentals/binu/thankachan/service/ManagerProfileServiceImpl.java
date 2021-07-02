@@ -17,6 +17,7 @@ public class ManagerProfileServiceImpl implements ManagerProfileService{
 	ManagerProfileDao managerProfileDao;
 	
 	
+	// method for Manager Profile find by id service
 	@Override
 	@Transactional
 	public ManagerProfile findById(long id) {
@@ -24,6 +25,7 @@ public class ManagerProfileServiceImpl implements ManagerProfileService{
 		return managerProfileDao.findById(id);
 	}
 
+	// method for Manager Profile find by user id service
 	@Override
 	@Transactional
 	public ManagerProfile findByUserId(long userId) {
@@ -31,6 +33,7 @@ public class ManagerProfileServiceImpl implements ManagerProfileService{
 		return managerProfileDao.findByUserId(userId);
 	}
 
+	// method for Manager Profile find all manager profiles service
 	@Override
 	@Transactional
 	public List<ManagerProfile> findAllManagerProfiles() {
@@ -38,6 +41,7 @@ public class ManagerProfileServiceImpl implements ManagerProfileService{
 		return managerProfileDao.findAllManagerProfiles();
 	}
 	
+	// method for Manager Profile save service
 	@Override
 	@Transactional
 	public void save(ManagerProfile managerProfile) {
@@ -46,6 +50,7 @@ public class ManagerProfileServiceImpl implements ManagerProfileService{
 		
 	}
 
+	// method for Manager Profile delete service
 	@Override
 	@Transactional
 	public void delete(ManagerProfile managerProfile) {

@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.abcrentals.binu.thankachan.constants.RentalWebsiteConstants;
+import com.abcrentals.binu.thankachan.entity.ManagerProfile;
+import com.abcrentals.binu.thankachan.entity.OwnerProfile;
 import com.abcrentals.binu.thankachan.entity.RentalPayment;
 import com.abcrentals.binu.thankachan.entity.RentalProperty;
 import com.abcrentals.binu.thankachan.entity.RentalRepair;
@@ -68,12 +70,15 @@ public class RentalPaymentController {
 	
     // SHOW THE RENTAL PAYMENT MANAGEMENT PAGE =====================================================================================================
     
+    // handler method to display the manage rental payments page
 	@GetMapping("/showManageRentalPaymentsPage")
 	public ModelAndView showManageRentalPaymentsPage(HttpServletRequest request,Model theModel) {
 		
 		System.out.println("a1a: Entering RentalPaymentController   showManageRentalPaymentsPage() method");
 
 		ModelAndView mv = new ModelAndView("manager/rental-payments/manage-rental-payments");
+		List<RentalPayment> rentalPaymentList = rentalPaymentService.findAllRentalPayments();
+		mv.addObject("rentalPaymentList", rentalPaymentList);
 		
 		System.out.println("a99a: Exiting RentalPaymentController   showManageRentalPaymentsPage() method   ");
 		 
@@ -87,7 +92,8 @@ public class RentalPaymentController {
     
 	
     // SHOW A PAGE DISPLAYING ALL RENTAL PAYMENTS =================================================================================================
-	
+
+    // handler method to display all rental payments page
 	@GetMapping("/showAllRentalPaymentsPage")
 	public ModelAndView showAllRentalPaymentsPage(HttpServletRequest request,Model theModel) {
 		
@@ -110,7 +116,8 @@ public class RentalPaymentController {
     
 	
 	// ADD RENTAL PAYMENTS HANDLER METHODS ========================================================================================================
-	
+
+    // handler method to display the add rental payment page
 	@GetMapping("/showAddRentalPaymentPage")
 	public ModelAndView showAddRentalPaymentPage(HttpServletRequest request,Model theModel) {
 		
@@ -157,7 +164,7 @@ public class RentalPaymentController {
 	}
 	
 	
-	
+    // handler method to process add rental payment form	
 	@PostMapping("/processAddRentalPaymentForm")
 	public ModelAndView processAddRentalPaymentForm(HttpServletRequest request,
 				@Valid @ModelAttribute("rentalPayment") RentalPayment theRentalPayment, 
@@ -165,6 +172,7 @@ public class RentalPaymentController {
 				Model theModel) {
 
 		System.out.println("c1a: Entering RentalPaymentController  processAddRentalPaymentForm() method   :   theRentalPayment: " + theRentalPayment.toString());
+		System.out.println("c1b: Entering RentalPaymentController  processAddRentalPaymentForm() method   :   theBindingResult: " + theBindingResult.getAllErrors().toString());
 
 		logger.info("Processing Add Rental Payment form for rental property id: " + theRentalPayment.getRentalPropertyId() + "  | unit no: " + theRentalPayment.getRentalUnitNo() + "  | renter user id: " + theRentalPayment.getRenterUserId());
 
@@ -173,7 +181,6 @@ public class RentalPaymentController {
 		// form validation
 		if (theBindingResult.hasErrors()){
 			System.out.println("c2a: in processAddRentalPaymentForm() method:  there are errors  | redirecting to rental-payment/add-rental-payment page");
-			System.out.println("c2b: in processAddRentalPaymentForm() method:  | " + theBindingResult.getAllErrors().toString());
 			ModelAndView mv = new ModelAndView("manager/rental-payments/add-rental-payment");
 			mv.addObject("rentalPayment", theRentalPayment);
    			mv.addObject("renterProfileList", se.getAttribute("renterProfileList"));
@@ -210,7 +217,8 @@ public class RentalPaymentController {
 	
 	
     // SHOW A PAGE FOR THE USER TO SELECT SPECIFIC RENTAL PAYMENTS =================================================================================================
-	
+
+    // handler method to display select rental payments to display page
 	@GetMapping("/showSelectRentalPaymentsToDisplayPage")
 	public ModelAndView showSelectRentalPaymentsToDisplayPage(HttpServletRequest request,Model theModel) {
 		
@@ -263,7 +271,7 @@ public class RentalPaymentController {
 	
 	
 	
-	
+    // handler method to display the rental payments page
 	@PostMapping("/showRentalPaymentsToDisplay")
 	public ModelAndView showRentalPaymentsToDisplay(HttpServletRequest request,
 			@Valid @ModelAttribute("rentalPayment") RentalPayment theRentalPayment, 
@@ -284,11 +292,17 @@ public class RentalPaymentController {
 		if (!rentalMnth.equals("-1")) rentalMnth = RentalWebsiteConstants.MONTHS_2DIGIT_NUM[Integer.parseInt(rentalMnth)];
 		Long    renterUsrId    = theRentalPayment.getRenterUserId();
 		
+		System.out.println("a5a: In RentalPaymentController   showRentalPaymentsToDisplay() method   rentalProptyId= " + rentalProptyId);
+		System.out.println("a5a: In RentalPaymentController   showRentalPaymentsToDisplay() method   rentalUntNo= " + rentalUntNo);
+		System.out.println("a5a: In RentalPaymentController   showRentalPaymentsToDisplay() method   rentalYr= " + rentalYr);
+		System.out.println("a5a: In RentalPaymentController   showRentalPaymentsToDisplay() method   rentalMnth= " + rentalMnth);
+		System.out.println("a5a: In RentalPaymentController   showRentalPaymentsToDisplay() method   renterUsrId= " + renterUsrId);
+		
 		List<RentalPayment> rentalPaymentList = null;
 		if (rentalProptyId != -1 && rentalUntNo != null && !rentalYr.equals("-1") && !rentalMnth.equals("-1") && renterUsrId != -1) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonthAndRenterUserId(rentalProptyId, 
 																											rentalUntNo, rentalYr, rentalMnth, renterUsrId);
-			
+			System.out.println("a5b: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;			
 		}
@@ -298,49 +312,74 @@ public class RentalPaymentController {
 																											rentalUntNo, 
 																											rentalYr, 
 																											rentalMnth); 
+			System.out.println("a5c: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (rentalProptyId != -1 && rentalUntNo != null && !rentalYr.equals("-1")) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYear(	rentalProptyId, rentalUntNo, 
-					rentalYr);			
+					rentalYr);		
+			System.out.println("a5d: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (rentalProptyId != -1 && rentalUntNo != null) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo(rentalProptyId, rentalUntNo);
-					
+				
+			System.out.println("a5e: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (!rentalMnth.equals("-1") &&  renterUsrId != -1) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByMonthAndRenterUserId(rentalMnth, renterUsrId);
 					
+			System.out.println("a5f: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
+			mv.addObject("rentalPaymentList", rentalPaymentList);
+			return mv;
+		}
+		if (rentalUntNo != null && !rentalYr.equals("-1") ) {
+			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByYearAndRentalUnitNo(rentalYr, rentalUntNo);
+									 
+			System.out.println("a5f1: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 
+
 		if (rentalProptyId != -1) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRentalPropertyId(rentalProptyId);		
 			
+			System.out.println("a5g: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (!rentalYr.equals("-1")) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByYear(rentalYr);	
 			
+			System.out.println("a5h: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (!rentalMnth.equals("-1")) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByMonth(rentalMnth);
 			
+			System.out.println("a5i: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}
 		if (rentalUntNo != null) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRentalUnitNo(rentalUntNo);
 			
+			System.out.println("a5j: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
 		}		
@@ -349,6 +388,8 @@ public class RentalPaymentController {
 		
 		if (renterUsrId != -1) {
 			rentalPaymentList = rentalPaymentService.findAllRentalPaymentsByRenterUserId(renterUsrId);
+			System.out.println("a5k: In RentalPaymentController   showRentalPaymentsToDisplay() method");			
+
 			
 			mv.addObject("rentalPaymentList", rentalPaymentList);
 			return mv;
@@ -357,6 +398,7 @@ public class RentalPaymentController {
 		// Otherwise, just return the entire list
 		rentalPaymentList = rentalPaymentService.findAllRentalPayments();
 		mv.addObject("rentalPaymentList", rentalPaymentList);
+
 
 			
 		System.out.println("a99a: Exiting RentalPaymentController   showRentalPaymentsToDisplay() method   ");
@@ -371,15 +413,136 @@ public class RentalPaymentController {
 	
 	
 	
-	
-	@PostMapping("/showSelectRentalPaymentToUpdatePage")
-	public ModelAndView showSelectRentalRepairToDeletePage(HttpServletRequest request) {
+    // handler method to display the select rental payment to update page	
+	@GetMapping("/showSelectRentalPaymentToUpdatePage")
+	public ModelAndView showSelectRentalPaymentToUpdatePage(HttpServletRequest request) {
 		
+		System.out.println("b1a: Entering RentalPaymentController   showSelectRentalPaymentToUpdatePage() method");
 
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("manager/rental-payments/select-rental-payment-to-update");
+		
+		
+		HttpSession se = request.getSession();
+		List<RentalPayment> rentalPayments = (List<RentalPayment>)rentalPaymentService.findAllRentalPayments();
+		
+		mv.addObject("rentalPayment", new RentalPayment());    // add form backing object
+		mv.addObject("rentalPayments", rentalPayments);         // add for the page dropdown
+
+		se.setAttribute("rentalPayments", rentalPayments);
+ 
+		
+		System.out.println("b99a: Exiting RentalPaymentController   showSelectRentalPaymentToUpdatePage() method   ");
+		 
 		return mv;
 
 	}
+	
+
+    // handler method to display the rental payment to update form
+	@PostMapping("/showRentalPaymentToUpdateForm")
+	public ModelAndView showRentalPaymentToUpdateForm(HttpServletRequest request,
+			@ModelAttribute("rentalPayment") RentalPayment theRentalPaymentToUpdate,BindingResult theBindingResult) {
+		
+		System.out.println("c1a: Entering MaintenanceController  showRentalPaymentToUpdateForm() method     theRentalPaymentToUpdate= " + theRentalPaymentToUpdate.toString());
+
+		
+		ModelAndView mv = new ModelAndView("manager/rental-payments/update-rental-payment");
+		RentalPayment rentalPayment = rentalPaymentService.findById(theRentalPaymentToUpdate.getId());
+ 		mv.addObject("rentalPayment", rentalPayment); // form backing object
+		
+		
+		
+		List<RentalProperty> rentalPropertyList = rentalPropertyService.findAllRentalProperties();
+		mv.addObject("rentalPropertyList", rentalPropertyList);				
+		mv.addObject("origRentalPropertyId", rentalPayment.getRentalPropertyId());
+		
+	    Map<Integer, String> rentalYearList = new HashMap<Integer, String>();
+	    for(String str: RentalWebsiteConstants.RENTAL_YEARS) {
+	    	rentalYearList.put(Integer.parseInt(str), str);
+	    }
+	    mv.addObject("rentalYearList", rentalYearList);
+
+		
+	    Map<String, String> rentalMonthList = new HashMap<String, String>();
+	    int i=0;
+	    for(String str: RentalWebsiteConstants.MONTHS_2DIGIT_NUM) {
+	    	rentalMonthList.put(str, RentalWebsiteConstants.MONTHS_2DIGIT_PLUS_NAME[i++]);
+	    }
+	    mv.addObject("rentalMonthList", rentalMonthList);
+
+ 
+		HttpSession se = request.getSession();
+		se.setAttribute("theRentalPayment", rentalPayment);
+		se.setAttribute("rentalPropertyList", rentalPropertyList);
+		se.setAttribute("rentalYearList", rentalYearList);
+		se.setAttribute("rentalMonthList", rentalMonthList);
+		se.setAttribute("origRentalPropertyId", rentalPayment.getRentalPropertyId());
+
+		
+		System.out.println("c99a: Exiting MaintenanceController  showRentalPaymentToUpdateForm() method   theRentalPaymentToUpdate:  " + theRentalPaymentToUpdate.getId() + "  | property id:  " + theRentalPaymentToUpdate.getRentalPropertyId());
+		System.out.println("c99b: Exiting MaintenanceController  showRentalPaymentToUpdateForm() method   rentalPropertyList= " + rentalPropertyList.toString());
+		System.out.println("c99b: Exiting MaintenanceController  showRentalPaymentToUpdateForm() method   rentalYearList= " + rentalYearList.toString());
+		System.out.println("c99b: Exiting MaintenanceController  showRentalPaymentToUpdateForm() method   rentalMonthList= " + rentalMonthList.toString());
+		 
+		return mv;
+	}
+	
+	
+    // handler method to process the update rental payment form
+	@PostMapping("/processUpdateRentalPaymentForm")
+	public ModelAndView processUpdateRentalPaymentForm(HttpServletRequest request,
+				@Valid @ModelAttribute("rentalPayment") RentalPayment theRentalPaymentToUpdate, 
+				BindingResult theBindingResult, 
+				Model theModel) {
+
+
+		HttpSession se = request.getSession();
+		RentalPayment theRentalPayment = (RentalPayment) se.getAttribute("theRentalPayment");
+	//	theRentalPaymentToUpdate.setSubmittedByUserId(theRentalRepair.getSubmittedByUserId());
+	//	theRentalPaymentToUpdate.setSubmittedDate(theRentalRepair.getSubmittedDate());
+	//	theRentalPaymentToUpdate.setSubmittedDate(theRentalRepair.getSubmittedDate());	
+		
+		System.out.println("e1a: Entering RentalPaymentController  processUpdateRentalPaymentForm() method   theRentalPaymentToUpdate   rental payment id: " + theRentalPaymentToUpdate.getId() + "  | property id:  " + theRentalPaymentToUpdate.getRentalPropertyId() + "  | unit no: " + theRentalPaymentToUpdate.getRentalUnitNo()  + "  | renter user id:  " + theRentalPaymentToUpdate.getRenterUserId());
+		
+		// form validation
+		if (theBindingResult.hasErrors()){
+			 System.out.println("e2a: in processUpdateRentalPaymentForm() method:  there are errors  | redirecting to managere/rental-payments/update-rental-payment page");
+			 System.out.println("e2b: in processUpdateRentalPaymentForm() method:  | " + theBindingResult.getAllErrors().toString());
+			 ModelAndView mv = new ModelAndView("managere/rental-payments/update-rental-payment");
+			 mv.addObject("rentalPayment",theRentalPaymentToUpdate);
+			 mv.addObject("rentalPropertyList",se.getAttribute("rentalPropertyList"));
+			 mv.addObject("rentalYearList",se.getAttribute("rentalYearList"));
+			 mv.addObject("rentalMonthList",se.getAttribute("rentalMonthList"));
+			 mv.addObject("origRentalPropertyId",se.getAttribute("origRentalPropertyId"));
+
+			 return mv;
+		}
+		 
+		logger.info("Processing Update Rental Payment update for rental payment id:  " + theRentalPaymentToUpdate.getId() + "  | property id:  " + theRentalPaymentToUpdate.getRentalPropertyId() + "  | unit no:  " + theRentalPaymentToUpdate.getRentalUnitNo());
+
+ 
+		
+		ModelAndView mv = null;
+		if (theRentalPaymentToUpdate != null) {
+			rentalPaymentService.save(theRentalPaymentToUpdate);
+			 mv = new ModelAndView("manager/rental-payments/update-rental-payment-confirmation");
+	 	 }	else {
+	 		mv = new ModelAndView("manager/rental-payments/error-updating-rental-payment");
+	 	 }
+
+			 
+		 return mv;
+
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -387,6 +550,7 @@ public class RentalPaymentController {
 	
     // SHOW A PAGE FOR THE USER TO SELECT A SPECIFIC RENTAL PAYMENT TO DELETE BY ID  ==============================================================
 	
+    // handler method to display the rental payment to delete page
 	@GetMapping("/showSelectRentalPaymentToDeletePage")
 	public ModelAndView showSelectRentalPaymentToDeletePage(HttpServletRequest request,Model theModel) {
 		
@@ -412,7 +576,8 @@ public class RentalPaymentController {
 		return mv;
 	}
 	
-	
+
+    // handler method to display the rental to delete form
 	@PostMapping("/showRentalPaymentToDeleteForm")
 	public ModelAndView showRentalPaymentToDeleteForm(HttpServletRequest request,
 			@Valid @ModelAttribute("rentalPayment") RentalPayment theRentalPayment, 
@@ -435,7 +600,7 @@ public class RentalPaymentController {
 	}
 	
 	
-	
+    // handler method to process the delete rental payment form	
 	@PostMapping("/processDeleteRentalPaymentForm")
 	public ModelAndView processDeleteRentalPaymentForm(HttpServletRequest request,
 				@Valid @ModelAttribute("rentalPayment") RentalPayment theRentalPayment, 

@@ -113,11 +113,6 @@ h2 {
       <tr>
         <th>User Id</th>
         <th>Username</th>
-        <th>Password</th>
-        <th>Name Prefix</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Name Suffix</th>
         <th>Email</th>
         <th>User Creation Date</th>
         <th>Access Level</th>
@@ -132,11 +127,6 @@ h2 {
  	      <tr>
 	        <td>${usr.id}</td>
 	        <td>${usr.userName}</td>
-	        <td>${usr.password}</td>
-	        <td>${usr.namePrefix}</td>
-	        <td>${usr.firstName}</td>
-	        <td>${usr.lastName}</td>
-	        <td>${usr.nameSuffix}</td>
 	        <td>${usr.email}</td>
 	        <td>${usr.creationDate}</td>
 	        <td>${usr.accessLevel}</td>

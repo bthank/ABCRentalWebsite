@@ -43,6 +43,8 @@ public class StateOrProvinceController {
 	@Autowired
 	private CountryService countryService;
 
+	
+	// method to load countries list as model attribute
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries() {
 
@@ -53,6 +55,7 @@ public class StateOrProvinceController {
 	    return countries;
 	}  	
 
+	// handler method to retrieve states or provinces list for the home address country	
 	@RequestMapping("/getStatesOrProvincesForHomeAddress")
 	public ModelAndView getStatesOrProvincesForHomeAddress(HttpServletRequest request,@RequestParam("country") int countryCode, 
 			@ModelAttribute("renterUserProfile") RenterUserProfile theRenterUserProfile, 
@@ -82,7 +85,7 @@ public class StateOrProvinceController {
 		return mv;
 	}
 	
-
+	// handler method to retrieve states or provinces list for the employer address country	
 	@RequestMapping("/getStatesOrProvincesForEmployerAddress")
 	public ModelAndView getStatesOrProvincesForEmployerAddress(HttpServletRequest request,@RequestParam("country") int countryCode, 
 			@ModelAttribute("renterUserProfile") RenterUserProfile theRenterUserProfile,  
@@ -110,6 +113,7 @@ public class StateOrProvinceController {
 	}
 	
 
+	// handler method to retrieve states or provinces list for the billing address country	
 	@RequestMapping("/getStatesOrProvincesForBillingAddress")
 	public ModelAndView getStatesOrProvincesForBillingAddress(HttpServletRequest request,@RequestParam("country") int countryCode, 
 			@ModelAttribute("renterUserProfile") RenterUserProfile theRenterUserProfile, 

@@ -25,6 +25,9 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
 	private Logger logger = Logger.getLogger(getClass().getName());
 
+	/*
+	 * the method that handles unauthorized requests
+	 */
     @Override
     public void handle(
       HttpServletRequest request,

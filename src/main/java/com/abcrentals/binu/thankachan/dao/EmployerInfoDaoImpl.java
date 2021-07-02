@@ -24,6 +24,7 @@ public class EmployerInfoDaoImpl implements EmployerInfoDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	// dao method for employer info find employer info by id service
 	public EmployerInfo findEmployerInfoById(int id) {
 		System.out.println("a1: Entering EmployerInfoDaoImpl  in findEmployerInfoById() method");
 		 
@@ -56,6 +57,7 @@ public class EmployerInfoDaoImpl implements EmployerInfoDao {
 		
 	}
     
+	// dao method for employer info save service
     public void save(EmployerInfo employerInfo) {
     	
 		// get current hibernate session
@@ -66,6 +68,7 @@ public class EmployerInfoDaoImpl implements EmployerInfoDao {
 		
     }
 
+	// dao method for employer info delete service
 	@Override
 	public void delete(EmployerInfo employerInfo) {
 	   	

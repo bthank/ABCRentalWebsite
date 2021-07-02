@@ -18,12 +18,13 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 	
 	
 	
-	
+	// constructor to allow injecting dao for mocking 
 	@Autowired
 	public RentalPaymentServiceImpl(RentalPaymentDao rentalPaymentDao) {
 		this.rentalPaymentDao = rentalPaymentDao;
 	}
 
+	// method for Rental Payment find by id service 
 	@Override
 	@Transactional
 	public RentalPayment findById(long id) {
@@ -31,6 +32,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findById(id);
 	}
 
+	// method for Rental Payment find all rental payments by renter user id service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRenterUserId(long renterUserId) {
@@ -38,6 +40,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByRenterUserId(renterUserId);
 	}
 
+	// method for Rental Payment find all rental payments by rental property id and rental unit no service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo(long rentalPropertyId,
@@ -46,6 +49,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo(rentalPropertyId, rentalUnitNo);
 	}
 
+	// method for Rental Payment find all rental payments by rental property id and rental unit no and year and month service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonth(
@@ -54,6 +58,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonth(rentalPropertyId, rentalUnitNo, year, month);
 	}
 
+	// method for Rental Payment find all rental payments by rental property id and rental unit no and year service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYear(long rentalPropertyId,
@@ -64,7 +69,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 	
 	
 	
-	
+	// method for Rental Payment find all rental payments by rental property id and rental unit no and year and month and renter user id service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonthAndRenterUserId(
@@ -73,6 +78,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonthAndRenterUserId(rentalPropertyId, rentalUnitNo, year, month, renterUserId);
 	}
 
+	// method for Rental Payment find all rental payments by year and month and renter user id service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByYearAndMonthAndRenterUserId(String year, String month,
@@ -81,6 +87,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByYearAndMonthAndRenterUserId(year, month, renterUserId);
 	}
 
+	// method for Rental Payment find all rental payments by year and month service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByYearAndMonth(String year, String month) {
@@ -88,14 +95,23 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByYearAndMonth(year, month);
 	}
 	
-
+	// method for Rental Payment find all rental payments by month and renter user id service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByMonthAndRenterUserId(String month, long renterUserId) {
 		// TODO Auto-generated method stub
 		return rentalPaymentDao.findAllRentalPaymentsByMonthAndRenterUserId(month, renterUserId);
 	}
+	
+	// method for Rental Payment find all rental payments by year and rental unit no service
+	@Override
+	@Transactional
+	public List<RentalPayment> findAllRentalPaymentsByYearAndRentalUnitNo(String year, int rentalUnitNo) {
+		 
+		return rentalPaymentDao.findAllRentalPaymentsByYearAndRentalUnitNo(year, rentalUnitNo);
+	}
 
+	// method for Rental Payment find all rental payments by year service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByYear(String year) {
@@ -103,6 +119,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByYear(year);
 	}
 
+	// method for Rental Payment find all rental payments by month service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByMonth(String month) {
@@ -110,7 +127,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByMonth(month);
 	}
 	
-
+	// method for Rental Payment find all rental payments by rental unit no service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalUnitNo(int rentalUnitNo) {
@@ -121,7 +138,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 	
 	
 	
-
+	// method for Rental Payment find all rental payments by rental property id service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyId(long rentalPropertyId) {
@@ -129,6 +146,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPaymentsByRentalPropertyId(rentalPropertyId);
 	}
 
+	// method for Rental Payment find all rental payments service
 	@Override
 	@Transactional
 	public List<RentalPayment> findAllRentalPayments() {
@@ -136,6 +154,7 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		return rentalPaymentDao.findAllRentalPayments();
 	}
 
+	// method for Rental Payment save service
 	@Override
 	@Transactional
 	public void save(RentalPayment rentalPayment) {
@@ -143,12 +162,24 @@ public class RentalPaymentServiceImpl implements RentalPaymentService{
 		rentalPaymentDao.save(rentalPayment);
 	}
 
+	// method for Rental Payment update service
+	@Override
+	@Transactional
+	public void update(RentalPayment rentalPayment) {
+		rentalPaymentDao.update(rentalPayment);
+		
+	}
+
+	// method for Rental Payment delete service
 	@Override
 	@Transactional
 	public void delete(RentalPayment rentalPayment) {
 		 
 		rentalPaymentDao.delete(rentalPayment);
 	}
+
+
+
 
 
 

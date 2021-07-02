@@ -14,7 +14,7 @@ public class AdminProfileServiceImpl implements AdminProfileService{
 	@Autowired 
 	AdminProfileDao adminProfileDao;
 	
-	
+	// method for Admin Profile find by id service
 	@Override
 	@Transactional
 	public AdminProfile findById(long id) {
@@ -22,6 +22,7 @@ public class AdminProfileServiceImpl implements AdminProfileService{
 		return adminProfileDao.findById(id);
 	}
 
+	// method for Admin Profile find by user id service
 	@Override
 	@Transactional
 	public AdminProfile findByUserId(long userId) {
@@ -29,6 +30,7 @@ public class AdminProfileServiceImpl implements AdminProfileService{
 		return adminProfileDao.findByUserId(userId);
 	}
 
+	// method for Admin Profile save service
 	@Override
 	@Transactional
 	public void save(AdminProfile adminProfile) {
@@ -37,6 +39,7 @@ public class AdminProfileServiceImpl implements AdminProfileService{
 		
 	}
 	
+	// method for Admin Profile delete service
 	@Override
 	@Transactional
 	public void delete(AdminProfile adminProfile) {

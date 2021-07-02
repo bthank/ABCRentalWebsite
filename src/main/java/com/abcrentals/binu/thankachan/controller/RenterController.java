@@ -75,6 +75,8 @@ public class RenterController {
 	@Autowired
 	private RenterProfileService renterProfileService;
 
+	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes	
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -96,6 +98,9 @@ public class RenterController {
 		return countries;
 	}
 
+	
+	
+	// handler method to display the add renter profile page
 	@GetMapping("/showAddRenterProfilePage")
 	public ModelAndView showAddRenterProfilePage(HttpServletRequest request, Model theModel) {
 
@@ -125,6 +130,7 @@ public class RenterController {
 		return mv;
 	}
 
+	// handler method to process the add renter profile form
 	@PostMapping("/processAddRenterProfileForm")
 	public ModelAndView processAddRenterProfileForm(HttpServletRequest request,
 			@Valid @ModelAttribute("renterUserProfile") RenterUserProfile theRenterUserProfile,
@@ -152,21 +158,6 @@ public class RenterController {
 			return mv;
 		}
 
-//		// check the database if user already exists
-//        RenterProfile existing = renterProfile.findByUserName(userName);
-//        if (existing != null){
-//        	theModel.addAttribute("renterUserProfile", new RenterUserProfile());
-//			theModel.addAttribute("addRenterProfilError", "Renter profile already exists.");
-//
-//			logger.warning("User name already exists.");
-//        	return "registration-form";
-//        }
-//     // create user account        						
-//        userService.save(theCrmUser);
-//        
-//        logger.info("Successfully created user: " + userName);
-
-//        return "add-renter-profile-confirmation";		
 
 		System.out.println("In RenterController   processAddRenterProfileForm() method    theRenterUserProfile= "
 				+ theRenterUserProfile);
@@ -324,6 +315,8 @@ public class RenterController {
 
 	}
 
+	
+	// handler method to display the update renter profile page
 	@GetMapping("/showUpdateRenterProfilePage")
 	public ModelAndView showUpdateRenterProfilePage(HttpServletRequest request, Model theModel) {
 		System.out.println("a1: Entering RenterController   showUpdateRenterProfilePage() method");
@@ -484,7 +477,7 @@ public class RenterController {
 	}
 	
 	
-
+	// handler method to process the update renter profile form
 	@PostMapping("/processUpdateRenterProfileForm")
 	public ModelAndView processUpdateRenterProfileForm(HttpServletRequest request,
 			@Valid @ModelAttribute("renterUserProfile") RenterUserProfile theRenterUserProfile,
@@ -636,6 +629,9 @@ public class RenterController {
 
 	}
 
+	
+	
+	// handler method to display the renter profile page
 	@GetMapping("/showDisplayRenterProfilePage")
 	public ModelAndView showDisplayRenterProfilePage(HttpServletRequest request, Model theModel) {
 		System.out.println("a1: Entering RenterController   showDisplayRenterProfilePage() method");
@@ -747,28 +743,38 @@ public class RenterController {
 		// se.setAttribute("countries", countries);
 		se.setAttribute("statesOrProvincesForHomeAddress", statesOrProvinces);
 		se.setAttribute("statesOrProvincesForEmployerAddress", statesOrProvinces);
-
+		System.out.println("a11a: ---> In RenterController   ");
 		int genderIndx = privateInfo.getGender();
+		System.out.println("a11aa: ---> In RenterController    genderIndx= " + genderIndx);
+
 		String gender = RentalWebsiteConstants.GENDERS[genderIndx];
 		mv.addObject("gender", gender);
+		System.out.println("a11b: ---> In RenterController   ");
 
 		int ethnicityIndx = privateInfo.getEthnicity();
 		String ethnicity = RentalWebsiteConstants.ETHNICITIES[ethnicityIndx];
 		mv.addObject("ethnicity", ethnicity);
+		System.out.println("a11c: ---> In RenterController   ");
 
 		int creditCardNoExpMonthIndx = privateInfo.getCreditCardNoExpMonth();
 		String ccExpMonth = RentalWebsiteConstants.MONTHS_SHORT[creditCardNoExpMonthIndx];
 		mv.addObject("ccExpMonth", ccExpMonth);
-		
+		System.out.println("a11d1: ---> In RenterController   ");
 
-		int creditCardNoExpYearIndx = privateInfo.getCreditCardNoExpYear();
-		String ccExpYear = RentalWebsiteConstants.CC_EXP_YEARS[creditCardNoExpYearIndx];
+
+		//int creditCardNoExpYearIndx = privateInfo.getCreditCardNoExpYear();
+		//System.out.println("a11d2: ---> In RenterController   creditCardNoExpYearIndx= " + creditCardNoExpYearIndx);
+
+		String ccExpYear = privateInfo.getCreditCardNoExpYear().toString();
+		System.out.println("a11d3: ---> In RenterController   ccExpYear= " + ccExpYear);
+
 		mv.addObject("ccExpYear", ccExpYear);
+		System.out.println("a11e: ---> In RenterController   ");
+
 		
 		
-		
-		System.out.println("z96: Exiting RenterController   showDisplayRenterProfilePage() method   privateInfo= " + privateInfo.toString());
-		System.out.println("z97: Exiting RenterController   showDisplayRenterProfilePage() method   genderIndx= " + genderIndx + "  | ethnicity= " + ethnicity + "  | ccExpMonth= " +  ccExpMonth + "  | ccExpYear= " + ccExpYear);
+	//	System.out.println("z96: Exiting RenterController   showDisplayRenterProfilePage() method   privateInfo= " + privateInfo.toString());
+	//	System.out.println("z97: Exiting RenterController   showDisplayRenterProfilePage() method   genderIndx= " + genderIndx + "  | ethnicity= " + ethnicity + "  | ccExpMonth= " +  ccExpMonth + "  | ccExpYear= " + ccExpYear);
 		
 		
 		System.out.println(
@@ -780,14 +786,17 @@ public class RenterController {
 	}
 	
 	
-	
+	// handler method to display the delete renter profile page	
 	@PostMapping("/showDeleteRenterProfilePage")
 	public ModelAndView showDeleteRenterProfilePage(HttpServletRequest request) {
 		
-
+		// TODO -- complete the rest of this method in the future
+		
 		ModelAndView mv = new ModelAndView();
 		return mv;
 
 	}
+	
+	// TODO --  finish the delete renter profile processing in the future
 
 }

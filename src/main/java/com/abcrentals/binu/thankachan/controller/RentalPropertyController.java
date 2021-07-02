@@ -71,7 +71,7 @@ public class RentalPropertyController {
 	private AddressService addressService;
 	
 	
-	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -97,7 +97,7 @@ public class RentalPropertyController {
 
 
 	
-	
+	// handler method to display the add rental property page	
 	@GetMapping("/showAddRentalPropertyPage")
 	public ModelAndView showAddRentalPropertyPage(HttpServletRequest request,Model theModel) {
 		
@@ -137,7 +137,7 @@ public class RentalPropertyController {
 	}
 	
 	
-	
+	// handler method to process the add rental property form	
 	@PostMapping("/processAddRentalPropertyForm")
 	public ModelAndView processAddRentalPropertyForm(HttpServletRequest request,
 				@Valid @ModelAttribute("rentalProperty") RentalProperty theRentalProperty, 

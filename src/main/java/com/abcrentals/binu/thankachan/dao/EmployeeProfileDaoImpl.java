@@ -25,7 +25,8 @@ public class EmployeeProfileDaoImpl implements EmployeeProfileDao {
 	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
-		
+	
+	// dao method for employee profile find by id service
 	@Override
 	public EmployeeProfile findById(long id) {
 		   
@@ -47,7 +48,7 @@ public class EmployeeProfileDaoImpl implements EmployeeProfileDao {
 		   
 	}
 
-
+	// dao method for employee profile find by user id service
 	@Override
 	public EmployeeProfile findByUserId(long userId) {
 		
@@ -89,7 +90,7 @@ public class EmployeeProfileDaoImpl implements EmployeeProfileDao {
 		   
 	}
 
-	
+	// dao method for employee profile save service
 	@Override
 	public void save(EmployeeProfile employeeProfile) {
 	   	
@@ -101,6 +102,9 @@ public class EmployeeProfileDaoImpl implements EmployeeProfileDao {
 	    			 
 		
 	}
+	
+	
+	// dao method for employee profile delete service	
 	@Override
 	public void delete(EmployeeProfile employeeProfile) {
 	   	

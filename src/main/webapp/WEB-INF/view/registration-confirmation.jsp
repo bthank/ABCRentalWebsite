@@ -103,6 +103,8 @@ nav {
 
 
 
-	<%@include file="common/common-footer-not-logged-in.jsp"%>
+
+	<%@include file="common/common-footer1.jsp"%>
+
 	</body>
 </html>

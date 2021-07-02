@@ -99,8 +99,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		return securityDataSource;
 	}
 	
-	// need a helper method to
-	// read environment property and convert to int
+	// need a helper method to read environment property and convert to int
 	
 	private int getIntProperty(String propName) {
 		
@@ -112,6 +111,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		return intPropVal;
 	}
 	
+	// method to get the hibernate properties from environment and set property elements
 	private Properties getHibernateProperties() {
 
 		// set hibernate properties
@@ -123,7 +123,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		return props;				
 	}
 
-	
+	// method to set sessionFactory properties
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
 		
@@ -138,6 +138,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		return sessionFactory;
 	}
 	
+	// method to generate hibernate transaction manager
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
@@ -149,7 +150,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		return txManager;
 	}	
 	
-	
+	// method to add resource handlers to registry
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry

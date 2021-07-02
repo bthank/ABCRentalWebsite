@@ -18,7 +18,7 @@ public class RoleServiceImpl implements RoleService{
 	
 	
 	
-	
+	// method for Role find by id service
 	@Override
 	@Transactional
 	public Role findRoleById(long id) {
@@ -27,6 +27,7 @@ public class RoleServiceImpl implements RoleService{
 		
 	}
 
+	// method for Role find by role name service
 	@Override
 	@Transactional
 	public Role findRoleByName(String theRoleName) {
@@ -35,6 +36,7 @@ public class RoleServiceImpl implements RoleService{
 		
 	}
 
+	// method for Role save service
 	@Override
 	@Transactional
 	public void save(Role role) {
@@ -43,6 +45,7 @@ public class RoleServiceImpl implements RoleService{
 		
 	}
 
+	// method for Role delete service
 	@Override
 	@Transactional
 	public void delete(Role role) {

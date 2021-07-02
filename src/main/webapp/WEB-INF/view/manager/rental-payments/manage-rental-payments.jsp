@@ -132,16 +132,23 @@ nav {
 											<p class="prof-heading"></p>
 											
 											
-											<a
-												href="${pageContext.request.contextPath}/manager/rental-payments/showAllRentalPaymentsPage">
-												<button type="button" class="btn btn-success btn-size">Display All Rental Payments</button>
-											</a><br><br> 
 											
+											<c:if test="${not empty rentalPaymentList}" >
+																																																							
+												<a
+													href="${pageContext.request.contextPath}/manager/rental-payments/showAllRentalPaymentsPage">
+													<button type="button" class="btn btn-success btn-size">Display All Rental Payments</button>
+												</a><br><br> 
+
+												
+												<a
+													href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentsToDisplayPage">
+													<button type="button" class="btn btn-success btn-size">Display Specific Rental Payments</button>
+												</a><br><br> 
+												
+												
+											</c:if>
 											
-											<a
-												href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentsToDisplayPage">
-												<button type="button" class="btn btn-success btn-size">Display Specific Rental Payments</button>
-											</a><br><br> 
 											
 											<a
 												href="${pageContext.request.contextPath}/manager/rental-payments/showAddRentalPaymentPage">
@@ -149,17 +156,19 @@ nav {
 											</a><br><br> 
 											
 											
-											<a
-												href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentToUpdatePage">
-												<button type="button" class="btn btn-warning btn-size">Update Rental Payment</button>
-											</a><br><br> 
-											
-											<a
-												href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentToDeletePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Rental Payment</button>
-											</a><br><br> 
-
-
+											<c:if test="${not empty rentalPaymentList}" >
+																																																																		
+												<a
+													href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentToUpdatePage">
+													<button type="button" class="btn btn-warning btn-size">Update Rental Payment</button>
+												</a><br><br> 
+												
+												<a
+													href="${pageContext.request.contextPath}/manager/rental-payments/showSelectRentalPaymentToDeletePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Rental Payment</button>
+												</a><br><br> 
+	
+												</c:if>
 
 										</div>
 

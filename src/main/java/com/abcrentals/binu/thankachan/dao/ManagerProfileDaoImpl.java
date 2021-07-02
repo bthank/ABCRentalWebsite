@@ -26,6 +26,7 @@ public class ManagerProfileDaoImpl implements ManagerProfileDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 		
+	// dao method for manager profile find by id service
 	@Override
 	public ManagerProfile findById(long id) {
 		   
@@ -46,6 +47,7 @@ public class ManagerProfileDaoImpl implements ManagerProfileDao{
 		   
 	}
 
+	// dao method for manager profile find by user id service
 	@Override
 	public ManagerProfile findByUserId(long userId) {
 		
@@ -80,7 +82,8 @@ public class ManagerProfileDaoImpl implements ManagerProfileDao{
 			return theManagerProfile;		   
 		   
 	}
-
+	
+	// dao method for manager profile find all manager profiles service
 	@Override
 	public List<ManagerProfile> findAllManagerProfiles() {
 		
@@ -115,6 +118,7 @@ public class ManagerProfileDaoImpl implements ManagerProfileDao{
 		
 	}
 	
+	// dao method for manager profile save service
 	@Override
 	public void save(ManagerProfile managerProfile) {
 	   	
@@ -126,6 +130,7 @@ public class ManagerProfileDaoImpl implements ManagerProfileDao{
 	    			 
 	}
 
+	// dao method for manager profile delete service
 	@Override
 	public void delete(ManagerProfile managerProfile) {
 	   	

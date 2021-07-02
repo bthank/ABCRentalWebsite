@@ -187,6 +187,7 @@ nav {
 													<form:label class="form-label" path="managerUserId">Property Manager</form:label>
 													<br>
 													<select name="managerUserId">
+														<option value="0">-- Select Renter --</option>
 														<c:forEach items="${managerProfileList}"
 															var="manager">
 															<option value="${manager.user.id}"

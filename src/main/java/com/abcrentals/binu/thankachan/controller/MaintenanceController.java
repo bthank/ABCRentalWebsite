@@ -72,7 +72,8 @@ public class MaintenanceController {
 	
 	
 	//  ========================================================= USERS =========================================================================
-		
+
+    // handler method to display the manage users page
 	@GetMapping("/manage-users/showManageUsersPage")
 	public ModelAndView showManageUsersPage(HttpServletRequest request,Model theModel) {
 		
@@ -88,7 +89,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the display users page	
 	@GetMapping("/manage-users/showDisplayUsersPage")
 	public ModelAndView showDisplayUsersPage(HttpServletRequest request,Model theModel) {
 		
@@ -122,12 +123,15 @@ public class MaintenanceController {
 	
 	//  ==================================================== RENTAL PROPERTIES ==================================================================
 
+    // handler method to display the manage rental properties page
 	@GetMapping("/manage-rental-properties/showManageRentalPropertiesPage")
 	public ModelAndView showManageRentalPropertiesPage(HttpServletRequest request,Model theModel) {
 		
 		System.out.println("a1a: Entering MaintenanceController   showManageRentalPropertiesPage() method");
 
 		ModelAndView mv = new ModelAndView("maintenance/manage-rental-properties/manage-rental-properties");
+		List<RentalProperty> rentalPropertyList = rentalPropertyService.findAllRentalProperties();
+		mv.addObject("rentalPropertyList", rentalPropertyList);
 		
 			
 		System.out.println("a99a: Exiting MaintenanceController   showManageRentalPropertiesPage() method   ");
@@ -141,7 +145,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the display rental properties page	
 	@GetMapping("/manage-rental-properties/showDisplayRentalPropertiesPage")
 	public ModelAndView showDisplayRentalPropertiesPage(HttpServletRequest request,Model theModel) {
 		
@@ -171,7 +175,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the display the selected rental property to update page	
 	@GetMapping("/manage-rental-properties/showSelectRentalPropertyToUpdatePage")
 	public ModelAndView showSelectRentalPropertyToUpdatePage(HttpServletRequest request,Model theModel) {
 		
@@ -196,7 +200,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the display rental property to update form	
 	@PostMapping("/manage-rental-properties/showRentalPropertyToUpdateForm")
 	public ModelAndView showRentalPropertyToUpdateForm(HttpServletRequest request,
 			@ModelAttribute("rentalProperty") RentalProperty theRentalPropertyToUpdate,BindingResult theBindingResult) {
@@ -237,6 +241,7 @@ public class MaintenanceController {
 	}
 	
 	
+    // handler method to process the update rental property form	
 	@PostMapping("/manage-rental-properties/processUpdateRentalPropertyForm")
 	public ModelAndView processUpdateRentalPropertyForm(HttpServletRequest request,
 				@Valid @ModelAttribute("rentalProperty") RentalProperty theRentalPropertyToUpdate, 
@@ -281,16 +286,70 @@ public class MaintenanceController {
 	}
 
 	
-	
-	@PostMapping("/manage-rental-properties/showSelectRentalPropertyToDeletePage")
-	public ModelAndView showSelectRentalPropertyToDeletePage(HttpServletRequest request) {
+
+	// handler method to display the select rental property to delete page 	
+	@GetMapping("/manage-rental-properties/showSelectRentalPropertyToDeletePage")
+	public ModelAndView showSelectRentalPropertyToDeletePage(HttpServletRequest request,
+			@ModelAttribute("rentalProperty") RentalProperty theRentalPropertyToDelete,BindingResult theBindingResult) {
 		
+		System.out.println("c1a: Entering MaintenanceController  showSelectRentalPropertyToDeletePage() method");
 
-		ModelAndView mv = new ModelAndView();
+		
+		ModelAndView mv = new ModelAndView("maintenance/manage-rental-properties/select-rental-property-to-delete");
+		RentalProperty rentalProperty = new RentalProperty();
+
+		System.out.println("c3a: In MaintenanceController  showSelectRentalPropertyToDeletePage() method     ");
+		
+		
+		
+		List<RentalProperty> rentalPropertyList = rentalPropertyService.findAllRentalProperties();
+		mv.addObject("rentalPropertyList", rentalPropertyList);
+		mv.addObject("rentalProperty", rentalProperty);
+		
+		 
+		
+		HttpSession se = request.getSession();
+		se.setAttribute("theRentalProperty", rentalProperty);
+		se.setAttribute("rentalProperty", rentalProperty);
+
+	 
+		System.out.println("c99a: Exiting MaintenanceController   showSelectRentalPropertyToDeletePage() method   ");
+ 
 		return mv;
-
 	}
 	
+    // handler method to process the delete rental property form	
+	@PostMapping("/manage-rental-properties/processDeleteRentalPropertyForm")
+	public ModelAndView processDeleteRentalPropertyForm(HttpServletRequest request,
+				@Valid @ModelAttribute("rentalProperty") RentalProperty theRentalPropertyToDelete, 
+				BindingResult theBindingResult, 
+				Model theModel) {
+
+
+		HttpSession se = request.getSession();
+		RentalProperty theRentalProperty = (RentalProperty) se.getAttribute("theRentalProperty");
+		
+		System.out.println("e1a: Entering MaintenanceController  processDeleteRentalPropertyForm() method   theRentalPropertyToDelete   rental property id: " + theRentalPropertyToDelete.getId() );
+		
+		 
+		logger.info("Processing Delete Rental Property form for property id:  " + theRentalPropertyToDelete.getId() );
+
+ 
+		
+		ModelAndView mv = null;
+		if (theRentalPropertyToDelete != null) {
+			RentalProperty rentalProperty = rentalPropertyService.findById(theRentalPropertyToDelete.getId());
+			System.out.println("e90a: In MaintenanceController  processDeleteRentalPropertyForm() method  rentalProperty: " + rentalProperty.getId() + " | " + rentalProperty.getRentalPropertyName() );
+			rentalPropertyService.delete(rentalProperty);
+			 mv = new ModelAndView("maintenance/manage-rental-properties/delete-rental-property-confirmation");
+	 	 }	else {
+	 		mv = new ModelAndView("maintenance/manage-rental-properties/error-updating-rental-property");
+	 	 }
+
+			 
+		 return mv;
+
+	}	
 	
 	
 	
@@ -301,13 +360,15 @@ public class MaintenanceController {
 	
 	//  ==================================================== RENTAL REPAIRS =======================================================================
 	
-		
+    // handler method to display the manage rental repairs page 		
 	@GetMapping("/manage-rental-repairs/showManageRentalRepairsPage")
 	public ModelAndView showManageRentalRepairsPage(HttpServletRequest request,Model theModel) {
 		
 		System.out.println("a1a: Entering MaintenanceController   showManageRentalRepairsPage() method");
 
 		ModelAndView mv = new ModelAndView("maintenance/manage-rental-repairs/manage-rental-repairs");
+		List<RentalRepair> rentalRepairList = rentalRepairService.findAllRentalRepairs();
+		mv.addObject("rentalRepairList", rentalRepairList);
 		
 			
 		System.out.println("a99a: Exiting MaintenanceController   showManageRentalRepairsPage() method   ");
@@ -316,7 +377,7 @@ public class MaintenanceController {
 	}	
 	
 	
-	
+    // handler method to display the all rental repairs page 	
 	@GetMapping("/manage-rental-repairs/showAllRentalRepairsPage")
 	public ModelAndView showAllRentalRepairsPage(HttpServletRequest request,Model theModel) {
 		
@@ -340,7 +401,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the  select rental repair to update page	
 	@GetMapping("/manage-rental-repairs/showSelectRentalRepairToUpdatePage")
 	public ModelAndView showSelectRentalRepairToUpdatePage(HttpServletRequest request,Model theModel) {
 		
@@ -383,7 +444,7 @@ public class MaintenanceController {
 	
 	
 	
-	
+    // handler method to display the rental repair to update form 	
 	@PostMapping("/manage-rental-repairs/showRentalRepairToUpdateForm")
 	public ModelAndView showRentalRepairToUpdateForm(HttpServletRequest request,
 			@ModelAttribute("rentalRepair") RentalRepair theRentalRepairToUpdate,BindingResult theBindingResult) {
@@ -449,7 +510,7 @@ public class MaintenanceController {
 		return mv;
 	}
 	
-	
+    // handler method to process the update rental repair form	
 	@PostMapping("/manage-rental-repairs/processUpdateRentalRepairForm")
 	public ModelAndView processUpdateRentalRepairForm(HttpServletRequest request,
 				@Valid @ModelAttribute("rentalRepair") RentalRepair theRentalRepairToUpdate, 
@@ -499,16 +560,72 @@ public class MaintenanceController {
 
 	
 	
-	
-	@PostMapping("/manage-rental-repairs/showSelectRentalRepairToDeletePage")
-	public ModelAndView showSelectRentalRepairToDeletePage(HttpServletRequest request) {
+ 
 		
+	// handler method to display the  select rental repair to delete page	
+	@GetMapping("/manage-rental-repairs/showSelectRentalRepairToDeletePage")
+	public ModelAndView showSelectRentalRepairToDeletePage(HttpServletRequest request,
+			@ModelAttribute("rentalRepair") RentalRepair theRentalRepairToDelete,BindingResult theBindingResult) {
+		
+		System.out.println("c1a: Entering MaintenanceController  showSelectRentalRepairToDeletePage() method");
 
-		ModelAndView mv = new ModelAndView();
+		
+		ModelAndView mv = new ModelAndView("maintenance/manage-rental-repairs/select-rental-repair-to-delete");
+		RentalRepair rentalRepair = new RentalRepair();
+
+		System.out.println("c3a: In MaintenanceController  showSelectRentalRepairToDeletePage() method     rentalRepair= " + rentalRepair.getId() + "  |  " + rentalRepair.getDescription());
+		
+		
+		
+		List<RentalRepair> rentalRepairList = rentalRepairService.findAllRentalRepairs();
+		mv.addObject("rentalRepairList", rentalRepairList);
+		mv.addObject("rentalRepair", rentalRepair);
+		
+		 
+		
+		HttpSession se = request.getSession();
+		se.setAttribute("theRentalRepair", rentalRepair);
+		se.setAttribute("rentalRepair", rentalRepair);
+
+	 
+		System.out.println("c99a: Exiting MaintenanceController   showSelectRentalRepairToDeletePage() method   ");
+ 
 		return mv;
+	}
+	
+    // handler method to process the delete rental repair form	
+	@PostMapping("/manage-rental-repairs/processDeleteRentalRepairForm")
+	public ModelAndView processDeleteRentalRepairForm(HttpServletRequest request,
+				@Valid @ModelAttribute("rentalRepair") RentalRepair theRentalRepairToDelete, 
+				BindingResult theBindingResult, 
+				Model theModel) {
+
+
+		HttpSession se = request.getSession();
+		RentalRepair theRentalRepair = (RentalRepair) se.getAttribute("theRentalRepair");
+		
+		System.out.println("e1a: Entering MaintenanceController  processDeleteRentalRepairForm() method   theRentalRepairToDelete   rental repair id: " + theRentalRepairToDelete.getId() );
+		
+		 
+		logger.info("Processing Delete Rental Repair form for repair id:  " + theRentalRepairToDelete.getId() );
+
+ 
+		
+		ModelAndView mv = null;
+		if (theRentalRepairToDelete != null) {
+			RentalRepair rentalRepair = rentalRepairService.findById(theRentalRepairToDelete.getId());
+			System.out.println("e90a: In MaintenanceController  processDeleteRentalRepairForm() method  rentalRepair: " + rentalRepair.getId() + " | " + rentalRepair.getRentalPropertyId() + " | " + rentalRepair.getRentalUnitNo());
+			rentalRepairService.delete(rentalRepair);
+			 mv = new ModelAndView("maintenance/manage-rental-repairs/delete-rental-repair-confirmation");
+	 	 }	else {
+	 		mv = new ModelAndView("maintenance/manage-rental-repairs/error-updating-rental-repair");
+	 	 }
+
+			 
+		 return mv;
 
 	}
-			
+	
 	
 	
 	

@@ -18,6 +18,8 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 	@Autowired
 	private RentalPropertyDao rentalPropertyDao;
 	
+	
+	// method for Rental Property find by id service
 	@Override
 	@Transactional
 	public RentalProperty findById(long id) {
@@ -27,6 +29,7 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 
 	}
 
+	// method for Rental Property find by owner user id service
 	@Override
 	@Transactional
 	public List<RentalProperty> findByOwnerUserId(long ownerUserId) {
@@ -34,6 +37,7 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 		return rentalPropertyDao.findByOwnerUserId(ownerUserId);
 	}
 
+	// method for Rental Property find by manager user id service
 	@Override
 	@Transactional
 	public List<RentalProperty> findByManagerUserId(long managerUserId) {
@@ -41,6 +45,7 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 		return rentalPropertyDao.findByManagerUserId(managerUserId);
 	}
 	
+	// method for Rental Property find all rental properties service
 	@Override
 	@Transactional
 	public List<RentalProperty> findAllRentalProperties() {
@@ -48,6 +53,7 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 		return rentalPropertyDao.findAllRentalProperties();
 	}	
 
+	// method for Rental Property save service
 	@Override
 	@Transactional
 	public void save(RentalProperty rentalProperty) {
@@ -56,6 +62,7 @@ public class RentalPropertyServiceImpl implements RentalPropertyService{
 		
 	}
 
+	// method for Rental Property delete service 
 	@Override
 	@Transactional
 	public void delete(RentalProperty rentalProperty) {

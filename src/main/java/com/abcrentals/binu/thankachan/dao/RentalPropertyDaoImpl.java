@@ -26,7 +26,8 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-		@Override
+	// dao method for rental property find by id service
+	@Override
 	public RentalProperty findById(long id) {
 			 
 			// get the current hibernate session
@@ -45,8 +46,11 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 				theRentalProperty = null;
 			}
 
-			return theRentalProperty;		   	}
+			return theRentalProperty;		   	
+	}
 
+	
+	// dao method for rental property find by owner user id service
 	@Override
 	public List<RentalProperty> findByOwnerUserId(long ownerUserId) {
 		 
@@ -70,6 +74,7 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 
 	}
 
+	// dao method for rental property find by manager user id service
 	@Override
 	public List<RentalProperty> findByManagerUserId(long managerUserId) {
 		 
@@ -93,6 +98,7 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 
 	}
 
+	// dao method for rental property find all rental properties service
 	@Override
 	public List<RentalProperty> findAllRentalProperties() {
 		
@@ -113,7 +119,7 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 
 		return rentalPropertyList;			}
 	
-	
+	// dao method for rental property save service
 	@Override
 	public void save(RentalProperty rentalProperty) {
 	   	
@@ -125,6 +131,7 @@ public class RentalPropertyDaoImpl implements RentalPropertyDao{
 			
 	}
 
+	// dao method for rental property delete service
 	@Override
 	public void delete(RentalProperty rentalProperty) {
 	   	

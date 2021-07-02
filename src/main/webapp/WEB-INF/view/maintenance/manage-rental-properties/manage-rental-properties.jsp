@@ -130,23 +130,37 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading"></p>
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showDisplayRentalPropertiesPage">
-												<button type="button" class="btn btn-success btn-size">Display Rental Properties</button>
-											</a><br><br> 
+											
+											
+											<c:if test="${not empty rentalPropertyList}" >
+																						
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showDisplayRentalPropertiesPage">
+													<button type="button" class="btn btn-success btn-size">Display Rental Properties</button>
+												</a><br><br> 
+												
+											</c:if>
+											
+																																												
 											<a
 												href="${pageContext.request.contextPath}/rental-property/showAddRentalPropertyPage">
 												<button type="button" class="btn btn-primary btn-size">Add Rental Property</button>
-											</a><br><br> 
+											</a><br><br>
 											
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showSelectRentalPropertyToUpdatePage">
-												<button type="button" class="btn btn-warning btn-size">Update Rental Property</button>
-											</a><br><br> 
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showSelectRentalPropertyToDeletePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Rental Property</button>
-											</a><br><br> 
+
+											
+											<c:if test="${not empty rentalPropertyList}" >
+																																	
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showSelectRentalPropertyToUpdatePage">
+													<button type="button" class="btn btn-warning btn-size">Update Rental Property</button>
+												</a><br><br> 
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-properties/showSelectRentalPropertyToDeletePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Rental Property</button>
+												</a><br><br> 
+											
+											</c:if>
 
 										</div>
 

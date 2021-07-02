@@ -40,12 +40,13 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
     
     
-    
+    // method to configure authentication provider
    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
 	
+   // method to configure access to resources
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
@@ -92,6 +93,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	//beans
+	
 	//bcrypt bean definition
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
@@ -107,6 +109,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		return auth;
 	}
 	  
+	// access denied handler bean definition
     @Bean
     public AccessDeniedHandler accessDeniedHandler(){
         return new CustomAccessDeniedHandler();

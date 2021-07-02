@@ -16,6 +16,7 @@ public class ContactInfoServiceImpl implements ContactInfoService{
 	@Autowired
 	private ContactInfoDao contactInfoDao;
 
+	// method for Contact Info find contact info by id service
 	@Override
 	@Transactional
 	public ContactInfo findContactInfoById(int id) {
@@ -25,6 +26,7 @@ public class ContactInfoServiceImpl implements ContactInfoService{
 
 	}
 
+	// method for Contact Info save service
 	@Override
 	@Transactional
 	public void save(ContactInfo contactInfo) {
@@ -33,6 +35,7 @@ public class ContactInfoServiceImpl implements ContactInfoService{
 
 	}
 
+	// method for Contact Info delete service
 	@Override
 	@Transactional
 	public void delete(ContactInfo contactInfo) {

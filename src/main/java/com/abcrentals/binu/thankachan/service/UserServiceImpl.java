@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
+	// method for User find by username service
 	@Override
 	@Transactional
 	public User findByUserName(String userName) {
@@ -41,7 +42,7 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByUserName(userName);
 	}
 	
-	
+	// method for User find by user id service
 	@Override
 	@Transactional
 	public User findByUserId(Long id) {
@@ -49,7 +50,7 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByUserId(id);
 	}
 	
-
+	// method for User find all users service
 	@Override
 	@Transactional
 	public List<User> findAllUsers() {
@@ -57,7 +58,7 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAllUsers();
 	}
 	
-
+	// method for User save service
 	@Override
 	@Transactional
 	public void save(CrmUser crmUser) {
@@ -99,7 +100,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 
-
+	// method for User save User service - basic save that doesn't need all the functionality of the other save method
 	@Override
 	@Transactional
 	public void saveUser(User theUserToSave) {
@@ -108,6 +109,7 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	
+	// method for User delete service
 	@Override
 	@Transactional
 	public void delete(User user) {
@@ -117,7 +119,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	
-
+	// method for User load users by username service
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -129,6 +131,8 @@ public class UserServiceImpl implements UserService {
 				mapRolesToAuthorities(user.getRoles()));
 	}
 
+	
+	// user method for mapping roles to authorities service
 	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 	}

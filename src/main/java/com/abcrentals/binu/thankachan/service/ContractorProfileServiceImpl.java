@@ -17,6 +17,7 @@ public class ContractorProfileServiceImpl implements ContractorProfileService{
 	ContractorProfileDao contractorProfileDao;
 	
 	
+	// method for Contractor Profile find by id service 
 	@Override
 	@Transactional
 	public ContractorProfile findById(long id) {
@@ -24,6 +25,7 @@ public class ContractorProfileServiceImpl implements ContractorProfileService{
 		return contractorProfileDao.findById(id);
 	}
 
+	// method for Contractor Profile find by user id service
 	@Override
 	@Transactional
 	public ContractorProfile findByUserId(long userId) {
@@ -31,6 +33,7 @@ public class ContractorProfileServiceImpl implements ContractorProfileService{
 		return contractorProfileDao.findByUserId(userId);
 	}
 
+	// method for Contractor Profile find all contractor pofiles service
 	@Override
 	@Transactional
 	public List<ContractorProfile> findAllContractorProfiles() {
@@ -38,6 +41,7 @@ public class ContractorProfileServiceImpl implements ContractorProfileService{
 		return contractorProfileDao.findAllContractorProfiles();
 	}
 	
+	// method for Contractor Profile save service
 	@Override
 	@Transactional
 	public void save(ContractorProfile contractorProfile) {
@@ -46,6 +50,7 @@ public class ContractorProfileServiceImpl implements ContractorProfileService{
 		
 	}
 
+	// method for Contractor Profile delete service
 	@Override
 	@Transactional
 	public void delete(ContractorProfile contractorProfile) {

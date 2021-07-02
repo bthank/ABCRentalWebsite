@@ -70,8 +70,8 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeProfileService employeeProfileService;
 
-	
-	
+
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -92,7 +92,7 @@ public class EmployeeController {
 	    return countries;
 	}  	
 
-	
+	// handler method to display the add employee profile page
 	@GetMapping("/showAddEmployeeProfilePage")
 	public ModelAndView showAddEmployeeProfilePage(HttpServletRequest request,Model theModel) {
 		
@@ -121,6 +121,8 @@ public class EmployeeController {
 		return mv;
 	}
 	
+	
+	// handler method to process the add employee profile form page
 	@PostMapping("/processAddEmployeeProfileForm")
 	public ModelAndView processAddEmployeeProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("employeeUserProfile") EmployeeUserProfile theEmployeeUserProfile, 
@@ -253,7 +255,7 @@ public class EmployeeController {
 
 
 	
-	
+	// method to display the update employee profile page
 	@GetMapping("/showUpdateEmployeeProfilePage")
 	public ModelAndView showUpdateEmployeeProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("d1a:  Entering EmployeeController   showUpdateEmployeeProfilePage() method");
@@ -350,7 +352,7 @@ public class EmployeeController {
 	
 	
 	
-	
+	// handler method to process the update employee profile form
 	@PostMapping("/processUpdateEmployeeProfileForm")
 	public ModelAndView processUpdateEmployeeProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("employeeUserProfile") EmployeeUserProfile theEmployeeUserProfile, 
@@ -501,7 +503,7 @@ public class EmployeeController {
 
 
 	
-	
+	// handler method to display the display employee profile page
 	@GetMapping("/showDisplayEmployeeProfilePage")
 	public ModelAndView showDisplayEmployeeProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("f1a:  Entering EmployeeController   showDisplayEmployeeProfilePage() method");
@@ -598,16 +600,17 @@ public class EmployeeController {
 	
 	
 	
-	
+	// handler method to display the delete employee profile page
 	@PostMapping("/showDeleteEmployeeProfilePage")
 	public ModelAndView showDeleteEmployeeProfilePage(HttpServletRequest request) {
 		
+		// TODO -- complete the rest of this method in the future
 
 		ModelAndView mv = new ModelAndView();
 		return mv;
 
 	}
 	
-	
+	// TODO --  finish the delete employee profile processing in the future
 	
 }

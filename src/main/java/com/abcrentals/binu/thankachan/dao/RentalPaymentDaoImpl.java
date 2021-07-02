@@ -27,7 +27,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 	private SessionFactory sessionFactory;
 		
 	
-	
+	// dao method for rental payment find by id service
 	@Override
 	public RentalPayment findById(long id) {
 		
@@ -59,6 +59,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by renter user id service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRenterUserId(long renterUserId) {
 		
@@ -90,6 +91,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by rental property id and rental unit no service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo(long rentalPropertyId,
 			int rentalUnitNo) {
@@ -124,6 +126,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by rental property id and rental unit no and year and month service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonth(
 			long rentalPropertyId, int rentalUnitNo, String year, String month) {
@@ -160,6 +163,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by rental property id and rental unit no and year service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYear(long rentalPropertyId,
 			int rentalUnitNo, String year) {
@@ -199,7 +203,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 	
 	
 	
-
+	// dao method for rental payment find all rental payments by rental property id and rental unit no and year and month and renter user id service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNoAndYearAndMonthAndRenterUserId(
 			long rentalPropertyId, int rentalUnitNo, String year, String month, long renterUserId) {
@@ -237,6 +241,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by year and month and renter user id service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByYearAndMonthAndRenterUserId(String year, String month,long renterUserId) {
 		
@@ -271,6 +276,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by year and month service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByYearAndMonth(String year, String month) {
 		
@@ -306,7 +312,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 	
 	
 	
-
+	// dao method for rental payment find all rental payments by month and renter user id service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByMonthAndRenterUserId(String month, long renterUserId) {
 
@@ -336,12 +342,56 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 		System.out.println("r99:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByMonthAndRenterUserId() method\\n\\n");
 
-		return theRentalPaymentList;	}
+		return theRentalPaymentList;
+	}
 	
-	
-	
-	
+	// dao method for rental payment find all rental payments by year and rental unit no service
+	@Override
+	public List<RentalPayment> findAllRentalPaymentsByYearAndRentalUnitNo(String year, int rentalUnitNo) {
+		 
 
+		System.out.println("r1:  Entering RentalPaymentDaoImpl   findAllRentalPaymentsByYearAndRentalUnitNo() method    year= " + year + "     rentalUnitNo= " + rentalUnitNo);
+		   
+		   
+		// get the current Hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		System.out.println("r4:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+		// now retrieve/read from database using renterUserId
+		Query<RentalPayment> theQuery = currentSession.createQuery("FROM RentalPayment WHERE rentalYear=:rentalYr AND rentalUnitNo=:renterUntNo", RentalPayment.class);
+		System.out.println("r5:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+
+		theQuery.setParameter("rentalYr", year);
+		theQuery.setParameter("renterUntNo", rentalUnitNo);
+		System.out.println("r7:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+
+		List<RentalPayment> theRentalPaymentList = null;
+		try {
+			System.out.println("r9:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+
+			theRentalPaymentList = (List<RentalPayment>)theQuery.getResultList();
+			System.out.println("r10 Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+
+		} catch (Exception e) {
+			theRentalPaymentList = null;
+		}
+		System.out.println("r88:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   ");
+		System.out.println("r89:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   theRentalPaymentList = " + theRentalPaymentList);
+
+		if (!theRentalPaymentList.isEmpty()) {
+			System.out.println("r90:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   theRentalPaymentList:   id: " + theRentalPaymentList.get(0).getId() + " | property id: " + theRentalPaymentList.get(0).getRentalPropertyId() + " | unit no: " + theRentalPaymentList.get(0).getRentalUnitNo()  + " | mgr id: " + theRentalPaymentList.get(0).getRentalYear() + " | mgr id: " + theRentalPaymentList.get(0).getRentalMonth());
+		} else {
+			System.out.println("r92:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method   theRentalPaymentList is empty" );								
+		}
+		
+		System.out.println("r99:  Exiting RentalPaymentDaoImpl  findAllRentalPaymentsByYearAndRentalUnitNo() method\\n\\n");
+		
+		return theRentalPaymentList;
+
+	}
+	
+	
+	// dao method for rental payment find all rental payments by year service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByYear(String year) {
 		
@@ -374,6 +424,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments by month service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByMonth(String month) {
 		
@@ -406,7 +457,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
-	
+	// dao method for rental payment find all rental payments by rental unit no service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalUnitNo(int rentalUnitNo) {
 		
@@ -450,7 +501,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 	
 	
 	
-	
+	// dao method for rental payment find all rental payments by rental property id service
 	@Override
 	public List<RentalPayment> findAllRentalPaymentsByRentalPropertyId(long rentalPropertyId) {
 		
@@ -483,6 +534,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment find all rental payments service
 	@Override
 	public List<RentalPayment> findAllRentalPayments() {
 		
@@ -514,6 +566,7 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 		
 	}
 
+	// dao method for rental payment save service
 	@Override
 	public void save(RentalPayment rentalPayment) {
 		 
@@ -524,7 +577,20 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 			currentSession.saveOrUpdate(rentalPayment);
 
 	}
+	
+	// dao method for rental payment update service
+	@Override
+	public void update(RentalPayment rentalPayment) {
+		 
+			// get current Hibernate session
+			Session currentSession = sessionFactory.getCurrentSession();
 
+			// update the record
+			currentSession.saveOrUpdate(rentalPayment);
+
+	}
+
+	// dao method for rental payment delete service
 	@Override
 	public void delete(RentalPayment rentalPayment) {
 		 
@@ -535,6 +601,8 @@ public class RentalPaymentDaoImpl implements RentalPaymentDao{
 			currentSession.delete(rentalPayment);
 
 	}
+
+
 
 
 

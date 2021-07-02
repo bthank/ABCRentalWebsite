@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 	private SessionFactory sessionFactory;
 
 	
-
+	// dao method for user find by user id service
 	@Override
 	public User findByUserId(Long id) {
 		// get the current hibernate session
@@ -45,6 +45,7 @@ public class UserDaoImpl implements UserDao {
 		return theUser;
 	}
 	
+	// dao method for user find by user name service
 	@Override
 	public User findByUserName(String theUserName) {
 		// get the current hibernate session
@@ -63,7 +64,7 @@ public class UserDaoImpl implements UserDao {
 		return theUser;
 	}
 
-
+	// dao method for user find all users service
 	@Override
 	public List<User> findAllUsers() {
 		// get the current hibernate session
@@ -82,7 +83,7 @@ public class UserDaoImpl implements UserDao {
 		return theUsers;	
 	}
 	
-	
+	// dao method for user save user service
 	@Override
 	public void save(User theUser) {
 		// get current hibernate session
@@ -92,7 +93,7 @@ public class UserDaoImpl implements UserDao {
 		currentSession.saveOrUpdate(theUser);
 	}
 	
-	
+	// dao method for user save user service -- a 2nd version of the save user service -- TODO additional changes to this service
 	@Override
 	public void saveUser(User theUser) {
 		// get current hibernate session
@@ -103,6 +104,7 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 
+	// dao method for user delete service
 	@Override
 	public void delete(User user) {
 		// get current hibernate session

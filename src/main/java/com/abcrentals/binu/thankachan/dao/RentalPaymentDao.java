@@ -29,7 +29,8 @@ public interface RentalPaymentDao {
 																					int rentalUnitNo, String year, String month, long renterUserId);	
 	List<RentalPayment> findAllRentalPaymentsByYearAndMonthAndRenterUserId(String year, String month, long renterUserId);
 	List<RentalPayment> findAllRentalPaymentsByYearAndMonth(String year, String month);
-	List<RentalPayment> findAllRentalPaymentsByMonthAndRenterUserId(String month, long renterUserId);
+	List<RentalPayment> findAllRentalPaymentsByMonthAndRenterUserId(String month, long renterUserId);	
+	List<RentalPayment> findAllRentalPaymentsByYearAndRentalUnitNo(String year, int rentalUnitNo);
 
 	
 	
@@ -42,6 +43,8 @@ public interface RentalPaymentDao {
 	List<RentalPayment> findAllRentalPayments();
     
     void save(RentalPayment rentalPayment);
+        
+    void update(RentalPayment rentalPayment);   
     
     void delete(RentalPayment rentalPayment);
     

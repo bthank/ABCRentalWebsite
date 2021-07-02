@@ -130,10 +130,17 @@ nav {
 										<div>
 											<hr>
 											<p class="prof-heading"></p>
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showAllRentalRepairsPage">
-												<button type="button" class="btn btn-success btn-size">Display Rental Repairs</button>
-											</a><br><br> 
+											
+											
+											<c:if test="${not empty rentalRepairList}" >
+																																												
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showAllRentalRepairsPage">
+													<button type="button" class="btn btn-success btn-size">Display Rental Repairs</button>
+												</a><br><br> 
+											
+											</c:if>
+											
 											
 											<a
 												href="${pageContext.request.contextPath}/rental-repair/showAddRentalRepairPage">
@@ -141,17 +148,20 @@ nav {
 											</a><br><br> 
 											
 											
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showSelectRentalRepairToUpdatePage">
-												<button type="button" class="btn btn-warning btn-size">Update Rental Repair</button>
-											</a><br><br> 
 											
-											<a
-												href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showSelectRentalRepairToDeletePage">
-												<button type="button" class="btn btn-danger btn-size">Delete Rental Repair</button>
-											</a><br><br> 
+											<c:if test="${not empty rentalRepairList}" >
+																																												
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showSelectRentalRepairToUpdatePage">
+													<button type="button" class="btn btn-warning btn-size">Update Rental Repair</button>
+												</a><br><br> 
+												
+												<a
+													href="${pageContext.request.contextPath}/maintenance/manage-rental-repairs/showSelectRentalRepairToDeletePage">
+													<button type="button" class="btn btn-danger btn-size">Delete Rental Repair</button>
+												</a><br><br> 
 
-
+											</c:if>
 
 										</div>
 

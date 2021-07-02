@@ -23,6 +23,7 @@ public class ContactInfoDaoImpl implements ContactInfoDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	// dao method for contact info find by contact info id service
 	@Override
 	public ContactInfo findContactInfoById(int id) {
 		 
@@ -43,6 +44,7 @@ public class ContactInfoDaoImpl implements ContactInfoDao{
 
 	}
 
+	// dao method for contact info service
 	@Override
 	public void save(ContactInfo contactInfo) {
 		 
@@ -54,6 +56,7 @@ public class ContactInfoDaoImpl implements ContactInfoDao{
 		
 	}
 
+	// dao method for contact info service
 	@Override
 	public void delete(ContactInfo contactInfo) {
 		 

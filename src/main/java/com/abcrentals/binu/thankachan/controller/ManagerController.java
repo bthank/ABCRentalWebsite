@@ -71,7 +71,7 @@ public class ManagerController {
 	private ManagerProfileService managerProfileService;
 
 	
-	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -92,7 +92,7 @@ public class ManagerController {
 	    return countries;
 	}  	
 
-	
+    // handler method to display the manager profile page	
 	@GetMapping("/showAddManagerProfilePage")
 	public ModelAndView showAddManagerProfilePage(HttpServletRequest request,Model theModel) {
 		
@@ -121,6 +121,7 @@ public class ManagerController {
 		return mv;
 	}
 	
+    // handler method to process the add manager profile form
 	@PostMapping("/processAddManagerProfileForm")
 	public ModelAndView processAddManagerProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("managerUserProfile") ManagerUserProfile theManagerUserProfile, 
@@ -253,7 +254,7 @@ public class ManagerController {
 
 
 	
-	
+    // handler method to display the update manager profile page	
 	@GetMapping("/showUpdateManagerProfilePage")
 	public ModelAndView showUpdateManagerProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("d1a: Entering ManagerController   showUpdateManagerProfilePage() method");
@@ -347,7 +348,7 @@ public class ManagerController {
 	
 	
 	
-	
+    // handler method to process the update manager profile form	
 	@PostMapping("/processUpdateManagerProfileForm")
 	public ModelAndView processUpdateManagerProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("managerUserProfile") ManagerUserProfile theManagerUserProfile, 
@@ -494,7 +495,7 @@ public class ManagerController {
 
 
 	
-	
+    // handler method to display the manager profile page	
 	@GetMapping("/showDisplayManagerProfilePage")
 	public ModelAndView showDisplayManagerProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("f1a: Entering ManagerController   showDisplayManagerProfilePage() method");

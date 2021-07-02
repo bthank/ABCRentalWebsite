@@ -19,7 +19,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<style>
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/main.css">
+
+
+
+<!-- <style>
 .fakeimg {
 	height: 200px;
 	background: #aaa;
@@ -71,7 +77,7 @@ nav {
   /* fallback for old browsers */
   
 }
-</style>
+</style> -->
 </head>
 <body>
 

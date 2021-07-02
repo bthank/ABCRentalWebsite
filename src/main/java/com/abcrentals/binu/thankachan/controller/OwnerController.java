@@ -71,7 +71,7 @@ public class OwnerController {
 	private OwnerProfileService ownerProfileService;
 
 	
-	
+	// method to load countries list as model attribute and countries and statesOrProvinces lists as session attributes
 	@ModelAttribute("countries")
 	public List<Country> initializeCountries(HttpServletRequest request) {
 
@@ -92,7 +92,7 @@ public class OwnerController {
 	    return countries;
 	}  	
 
-	
+    // handler method to display the add owner profile page	
 	@GetMapping("/showAddOwnerProfilePage")
 	public ModelAndView showAddOwnerProfilePage(HttpServletRequest request,Model theModel) {
 		
@@ -121,6 +121,7 @@ public class OwnerController {
 		return mv;
 	}
 	
+    // handler method to process the add owner profile form
 	@PostMapping("/processAddOwnerProfileForm")
 	public ModelAndView processAddOwnerProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("ownerUserProfile") OwnerUserProfile theOwnerUserProfile, 
@@ -253,7 +254,7 @@ public class OwnerController {
 
 
 	
-	
+    // handler method to display the owner profile page	
 	@GetMapping("/showUpdateOwnerProfilePage")
 	public ModelAndView showUpdateOwnerProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("d1a: Entering OwnerController   showUpdateOwnerProfilePage() method");
@@ -347,7 +348,7 @@ public class OwnerController {
 	
 	
 	
-	
+    // handler method to process the update owner profile form	
 	@PostMapping("/processUpdateOwnerProfileForm")
 	public ModelAndView processUpdateOwnerProfileForm(HttpServletRequest request,
 				@Valid @ModelAttribute("ownerUserProfile") OwnerUserProfile theOwnerUserProfile, 
@@ -494,7 +495,7 @@ public class OwnerController {
 
 
 	
-	
+    // handler method to display the owner profile page	
 	@GetMapping("/showDisplayOwnerProfilePage")
 	public ModelAndView showDisplayOwnerProfilePage(HttpServletRequest request,Model theModel) {
 		System.out.println("f1a: Entering OwnerController   showDisplayOwnerProfilePage() method");
@@ -587,17 +588,18 @@ public class OwnerController {
 
 	
 	
-	
+    // handler method to display the delete owner profile page	
 	@PostMapping("/showDeleteOwnerProfilePage")
 	public ModelAndView showDeleteOwnerProfilePage(HttpServletRequest request) {
 		
-
+		// TODO -- complete the rest of this method in the future
+		
 		ModelAndView mv = new ModelAndView();
 		return mv;
 
 	}
 	
-	
+	// TODO -- complete the processing of the delete owner profile in the future
 	
 	
 }

@@ -24,7 +24,7 @@ public class PrivateInfoDaoImpl implements PrivateInfoDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
+	// dao method for private info find by id service
 	@Override
 	public PrivateInfo findPrivateInfoById(int id) {
 		 
@@ -47,6 +47,7 @@ public class PrivateInfoDaoImpl implements PrivateInfoDao{
 		return thePrivateInfo;		   
 	}
 
+	// dao method for private info save service
 	@Override
 	public void save(PrivateInfo privateInfo) {
     	
@@ -58,6 +59,7 @@ public class PrivateInfoDaoImpl implements PrivateInfoDao{
 		
 	}
 
+	// dao method for private info delete service
 	@Override
 	public void delete(PrivateInfo privateInfo) {
 	   	

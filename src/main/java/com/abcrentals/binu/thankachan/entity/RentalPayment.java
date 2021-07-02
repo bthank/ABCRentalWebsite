@@ -53,6 +53,7 @@ public class RentalPayment {
 	@Column(name="payment_made")
 	private Boolean paymentMade;
 	
+
  	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@Column(name="date_of_payment")
 	private LocalDate dateOfPayment;

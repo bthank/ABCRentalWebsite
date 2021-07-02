@@ -25,6 +25,7 @@ public class OwnerProfileDaoImpl implements OwnerProfileDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 		
+	// dao method for owner profile find by id service
 	@Override
 	public OwnerProfile findById(long id) {
 		   
@@ -45,6 +46,7 @@ public class OwnerProfileDaoImpl implements OwnerProfileDao{
 		   
 	}
 
+	// dao method for owner profile find by user id service
 	@Override
 	public OwnerProfile findByUserId(long userId) {
 		
@@ -80,6 +82,7 @@ public class OwnerProfileDaoImpl implements OwnerProfileDao{
 		   
 	}
 
+	// dao method for owner profile find all owner profiles service
 	@Override
 	public List<OwnerProfile> findAllOwnerProfiles() {
 		
@@ -112,7 +115,7 @@ public class OwnerProfileDaoImpl implements OwnerProfileDao{
 		return ownerProfileList;		   
 	}
 	
-
+	// dao method for owner profile save service
 	@Override
 	public void save(OwnerProfile ownerProfile) {
 	   	
@@ -124,6 +127,7 @@ public class OwnerProfileDaoImpl implements OwnerProfileDao{
 	    			 		
 	}
 
+	// dao method for owner profile delete service
 	@Override
 	public void delete(OwnerProfile ownerProfile) {
 	   	

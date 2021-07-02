@@ -25,6 +25,7 @@ public class AdminProfileDaoImpl implements AdminProfileDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 		
+	// dao method for admin profile find by id service
 	@Override
 	public AdminProfile findById(long id) {
 		   
@@ -45,6 +46,7 @@ public class AdminProfileDaoImpl implements AdminProfileDao{
 		   
 	}
 
+	// dao method for admin profile find by user id service
 	@Override
 	public AdminProfile findByUserId(long userId) {
 		
@@ -80,7 +82,7 @@ public class AdminProfileDaoImpl implements AdminProfileDao{
 		   
 	}
 	
-
+	// dao method for admin profile save service
 	@Override
 	public void save(AdminProfile adminProfile) {
 	   	
@@ -93,6 +95,7 @@ public class AdminProfileDaoImpl implements AdminProfileDao{
 		
 	}
 
+	// dao method for admin profile delete service
 	@Override
 	public void delete(AdminProfile adminProfile) {
     	

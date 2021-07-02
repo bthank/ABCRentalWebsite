@@ -237,13 +237,13 @@ nav {
 											<div class="col-md-6 mb-4">
 												<div class="form-outline">
 
-													<form:label class="form-label" path="dateOfPayment">Payment Date</form:label>
+											
+													<form:label class="form-label" path="dateOfPayment">Date of Birth</form:label>
 													<br>
-													<form:input type="date" path="dateOfPayment" id="paymentDt"
-														class="form-control" />
+													<form:input type="date" id="paymentDt" path="dateOfPayment" value=""/>
 													<br>
-													<form:errors path="dateOfPayment" cssClass="error" />
-
+													<form:errors  path="dateOfPayment" cssClass="error" />
+ 														
 												</div>
 											</div>
 										</div>

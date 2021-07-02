@@ -16,6 +16,7 @@ public class PrivateInfoServiceImpl implements PrivateInfoService{
 	@Autowired
 	private PrivateInfoDao privateInfoDao;
 	
+	// method for Private Info find by id service
 	@Override
 	@Transactional
 	public PrivateInfo findPrivateInfoById(int id) {
@@ -25,6 +26,7 @@ public class PrivateInfoServiceImpl implements PrivateInfoService{
 
 	}
 
+	// method for Private Info save service
 	@Override
 	@Transactional
 	public void save(PrivateInfo privateInfo) {
@@ -33,6 +35,7 @@ public class PrivateInfoServiceImpl implements PrivateInfoService{
 			
 	}
 
+	// method for Private Info delete service
 	@Override
 	@Transactional
 	public void delete(PrivateInfo privateInfo) {

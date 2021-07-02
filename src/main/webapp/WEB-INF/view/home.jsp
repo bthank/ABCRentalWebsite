@@ -166,17 +166,21 @@ nav {
 
 
 	<%@include file="common/common-footer1.jsp"%>
-	
 
-	<div id="dialog-message" title="Very Important">
+
+	<div id="dialog-message" title="Very Important"  style="font-size: 1.3em;">
 		<p>
 			<span class="ui-icon ui-icon-circle-check"
-				style="float: left; margin: 0 7px 50px 0;"></span> Hello
-			<span style="color: red; font-weight: bold;">${user.firstName}</span>. Please check out important information posted in
-			your <b style="color: red;">${role} Portal</b> page.
+				style="float: left; margin: 0 7px 50px 0;"></span> 
+				
+				
+				
+				Hello <span style="color: red; font-weight: bold;">${user.firstName}</span>.
+			Please check out important information posted on your <b
+				style="color: red;">${role} Portal</b> page.
 		</p>
 		<p>
-			Time is of the <b>essence</b>!.
+			Time is of the <b>essence</b>!
 		</p>
 
 	</div>

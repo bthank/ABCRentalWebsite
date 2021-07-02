@@ -27,6 +27,7 @@ public class CountryDaoImpl implements CountryDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	// dao method for country find by country code service
 	@Override
 	public Country findByCountryCode(int theCountryCode) {
 		// get the current Hibernate session
@@ -47,7 +48,7 @@ public class CountryDaoImpl implements CountryDao{
 	
 	}
 	
-	
+	// dao method for country find all countries service
 	@Override
 	public List<Country> findAllCountries() {
 		// get the current Hibernate session
@@ -69,7 +70,7 @@ public class CountryDaoImpl implements CountryDao{
 		return theCountries;	
 	}
 
-	
+	// dao method for save country service
 	@Override
 	public void save(Country theCountry) {
 		// get current Hibernate session
@@ -79,7 +80,7 @@ public class CountryDaoImpl implements CountryDao{
 		currentSession.saveOrUpdate(theCountry);
 	}
 
-
+	// dao method for delete country service
 	@Override
 	public void delete(Country theCountry) {
 		// get current Hibernate session

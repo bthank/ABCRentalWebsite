@@ -25,7 +25,7 @@ public class AddressDaoImpl implements AddressDao{
 		private SessionFactory sessionFactory;
 	
 		
-		
+	// dao method for find by address id service
 	   public Address findByAddressId(int addressId) {
 		   
 			// get the current hibernate session
@@ -44,7 +44,8 @@ public class AddressDaoImpl implements AddressDao{
 			return theAddress;		   
 		   
 	   }
-	    
+
+	   // dao method for save address service
 	    public void save(Address theAddress) {
 	    	
 			// get current Hibernate session
@@ -55,6 +56,7 @@ public class AddressDaoImpl implements AddressDao{
 	    	
 	    }
 
+		// dao method for delete address service
 		@Override
 		public void delete(Address address) {
 	    	

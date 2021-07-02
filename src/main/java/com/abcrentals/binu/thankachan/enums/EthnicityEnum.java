@@ -1,5 +1,7 @@
 package com.abcrentals.binu.thankachan.enums;
-
+/*
+ * Enum representing ethnicities
+ */
 public enum EthnicityEnum {
 	NOT_AVAILABLE,
 	AMERICAN_INDIAN_OR_ALASKA_NATIVE,

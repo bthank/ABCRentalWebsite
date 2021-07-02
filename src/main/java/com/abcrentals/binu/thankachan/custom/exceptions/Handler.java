@@ -25,6 +25,7 @@ import com.abcrentals.binu.thankachan.constants.RentalWebsiteConstants;
 @ControllerAdvice
 public class Handler {
 
+	// method to handle Exception class exceptions
     @ExceptionHandler(Exception.class)
     public ModelAndView handleException(Exception ex, 
                 HttpServletRequest request, HttpServletResponse response) {
@@ -38,7 +39,8 @@ public class Handler {
         
  
     }
-    
+
+	// method to handle NoHandlerFoundException class exceptions
     @ExceptionHandler(NoHandlerFoundException.class)
     public ModelAndView handleNoHandlerFoundException(Exception ex, 
                 HttpServletRequest request, HttpServletResponse response) {
@@ -52,7 +54,9 @@ public class Handler {
         
  
     }    
-    
+
+
+	// method to handle RuntimeException class exceptions
     @ExceptionHandler(RuntimeException.class)
     public final ModelAndView handleRunTimeException(RuntimeException ex,
                                                 WebRequest request) {

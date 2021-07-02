@@ -28,7 +28,7 @@ public class StateOrProvinceDaoImpl implements StateOrProvinceDao{
 	private SessionFactory sessionFactory;
 
 	
-	
+	// dao method for StateOrProvince find by stateOrProvince index service
 	@Override
 	public int findStateOrProvinceIndex(String theStateOrProvince) {
 		 
@@ -47,13 +47,13 @@ public class StateOrProvinceDaoImpl implements StateOrProvinceDao{
 			stateOrProvince = null;
 		}
 
-		System.out.println("z99:  Eiting StateOrProvinceDaoImpl  findStateOrProvinceIndex() method    stateOrProvince.getId()= " + stateOrProvince.getId());
+		System.out.println("z99:  Exiting StateOrProvinceDaoImpl  findStateOrProvinceIndex() method    stateOrProvince.getId()= " + stateOrProvince.getId());
 		return stateOrProvince.getId();		
 		
 		
 	}
 
-
+	// dao method for StateOrProvince find by id service
 	@Override
 	public StateOrProvince findById(int id) {
 		
@@ -76,7 +76,7 @@ public class StateOrProvinceDaoImpl implements StateOrProvinceDao{
 	
 	
 	
-
+	// dao method for StateOrProvince find by country service
 	@Override
 	public List<StateOrProvince> findByCountry(String theCountry) {
 		// get the current hibernate session
@@ -96,7 +96,7 @@ public class StateOrProvinceDaoImpl implements StateOrProvinceDao{
 		return theStatesOrProvinces;
 	}
 
-
+	// dao method for StateOrProvince save service
 	@Override
 	public void save(StateOrProvince theStateOrProvince) {
 		// get current Hibernate session
@@ -106,7 +106,7 @@ public class StateOrProvinceDaoImpl implements StateOrProvinceDao{
 		currentSession.saveOrUpdate(theStateOrProvince);
 	}
 
-
+	// dao method for StateOrProvince delete service
 	@Override
 	public void delete(StateOrProvince theStateOrProvince) {
 		// get current Hibernate session

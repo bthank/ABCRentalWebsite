@@ -53,7 +53,7 @@ public class UserController {
 
 	
 	
-	
+	// handler method to display the select user to update access for page
 	@GetMapping("/maintenance/manage-users/showSelectUserToUpdateAccessForPage")
 	public ModelAndView showSelectUserToUpdateAccessForPage(HttpServletRequest request,Model theModel) {
 		
@@ -78,7 +78,7 @@ public class UserController {
 	
 	
 	
-	
+	// handler method to display the update access for form	
 	@PostMapping("/maintenance/manage-users/showUserToUpdateAccessForForm")
 	public ModelAndView showUserToUpdateAccessForForm(HttpServletRequest request,
 			@ModelAttribute("user") User theUserToUpdate,BindingResult theBindingResult) {
@@ -111,6 +111,7 @@ public class UserController {
 	}
 	
 	
+	// handler method to process the update the user access form
 	@PostMapping("/maintenance/manage-users/processUpdateUserAccessForm")
 	public ModelAndView processUpdateUserAccessForm(HttpServletRequest request,
 				@Valid @ModelAttribute("user") User theUserToUpdate, 
@@ -155,17 +156,18 @@ public class UserController {
 
 	
 	
-	
+	// handler method to display the user to delete page	
 	@PostMapping("/maintenance/manage-users/showSelectUserToDeletePage")
 	public ModelAndView showSelectUserToDeletePage(HttpServletRequest request) {
 		
-
+		// TODO -- complete the rest of this method in the future
+		
 		ModelAndView mv = new ModelAndView();
 		return mv;
 
 	}
 	
-	
+	// TODO -- complete the processing of the delete user page in the future
 	
 	
 	

@@ -32,212 +32,9 @@
 	
 	
 <script>
-    // Run on page load
-    window.onload = function() {
+ 
 
-        // If sessionStorage is storing default values (ex. name), exit the function and do not restore data
-//         if (sessionStorage.getItem('contactInfoFirstName') == "contactInfoFirstName") {
-//             return;
-//         }
-
-        // If values are not blank, restore them to the fields
-/*         var contactInfoFirstName = sessionStorage.getItem('contactInfoFirstName');
-        if (contactInfoFirstName !== null) $('#contactInfoFirstName').val(contactInfoFirstName);
-
-        var contactInfoLastName = sessionStorage.getItem('contactInfoLastName');
-        if (contactInfoLastName !== null) $('#contactInfoLastName').val(contactInfoLastName);
-
-        var contactInfoPrimaryEmail = sessionStorage.getItem('contactInfoPrimaryEmail');
-        if (contactInfoPrimaryEmail !== null) $('#contactInfoPrimaryEmail').val(contactInfoPrimaryEmail);
-
-        var contactInfoHomePhoneNo = sessionStorage.getItem('contactInfoHomePhoneNo');
-        if (contactInfoHomePhoneNo !== null) $('#contactInfoHomePhoneNo').val(contactInfoHomePhoneNo);
-        
-        var contactInfoSecondaryEmail = sessionStorage.getItem('contactInfoSecondaryEmail');
-        if (contactInfoSecondaryEmail !== null) $('#contactInfoSecondaryEmail').val(contactInfoSecondaryEmail);
-
-        var contactInfoCellPhoneNo = sessionStorage.getItem('contactInfoCellPhoneNo');
-        if (contactInfoCellPhoneNo !== null) $('#contactInfoCellPhoneNo').val(contactInfoCellPhoneNo);
-        
-        var contactInfoWorkPhoneNo = sessionStorage.getItem('contactInfoWorkPhoneNo');
-        if (contactInfoWorkPhoneNo !== null) $('#contactInfoWorkPhoneNo').val(contactInfoWorkPhoneNo);
-        
-        var contactInfoHomeAddressType = sessionStorage.getItem('contactInfoHomeAddressType');
-        if (contactInfoHomeAddressType !== null) $('#contactInfoHomeAddressType').val(contactInfoHomeAddressType);       
-        
-        var contactInfoHomeAddrLine1 = sessionStorage.getItem('contactInfoHomeAddrLine1');
-        if (contactInfoHomeAddrLine1 !== null) $('#contactInfoHomeAddrLine1').val(contactInfoHomeAddrLine1);
-
-        var contactInfoHomeCity = sessionStorage.getItem('contactInfoHomeCity');
-        if (contactInfoHomeCity !== null) $('#contactInfoHomeCity').val(contactInfoHomeCity);
-        
-        var contactInfoHomeAddrLine2 = sessionStorage.getItem('contactInfoHomeAddrLine2');
-        if (contactInfoHomeAddrLine2 !== null) $('#contactInfoHomeAddrLine2').val(contactInfoHomeAddrLine2);
-         
-        var contactInfoHomeState = sessionStorage.getItem('contactInfoHomeState');
-        if (contactInfoHomeState !== null) $('#contactInfoHomeState').val(contactInfoHomeState);
-        
-        var contactInfoHomeAddrLine3 = sessionStorage.getItem('contactInfoHomeAddrLine3');
-        if (contactInfoHomeAddrLine3 !== null) $('#contactInfoHomeAddrLine3').val(contactInfoHomeAddrLine3);
-
-        var contactInfoHomePostalCode = sessionStorage.getItem('contactInfoHomePostalCode');
-        if (contactInfoHomePostalCode !== null) $('#contactInfoHomePostalCode').val(contactInfoHomePostalCode);
-        
-        var contactInfoHomeAddrLine4 = sessionStorage.getItem('contactInfoHomeAddrLine4');
-        if (contactInfoHomeAddrLine4 !== null) $('#contactInfoHomeAddrLine4').val(contactInfoHomeAddrLine4);
-       
-        var contactInfoHomeCountry = sessionStorage.getItem('contactInfoHomeCountry');
-        if (contactInfoHomeCountry !== null) $('#contactInfoHomeCountry').val(contactInfoHomeCountry);
-
-        var employerInfoEmployerName = sessionStorage.getItem('employerInfoEmployerName');
-        if (employerInfoEmployerName !== null) $('#employerInfoEmployerName').val(employerInfoEmployerName);        
-        
-        var employerInfoEmployerPhoneNo = sessionStorage.getItem('employerInfoEmployerPhoneNo');
-        if (employerInfoEmployerPhoneNo !== null) $('#employerInfoEmployerPhoneNo').val(employerInfoEmployerPhoneNo);
-        
-        var employerInfoEmployerAddressType = sessionStorage.getItem('employerInfoEmployerAddressType');
-        if (employerInfoEmployerAddressType !== null) $('#employerInfoEmployerAddressType').val(employerInfoEmployerAddressType);
-        
-        var employerInfoEmployerAddrLine1 = sessionStorage.getItem('employerInfoEmployerAddrLine1');
-        if (employerInfoEmployerAddrLine1 !== null) $('#employerInfoEmployerAddrLine1').val(employerInfoEmployerAddrLine1);
-        
-        var employerInfoEmployerCity = sessionStorage.getItem('employerInfoEmployerCity');
-        if (employerInfoEmployerCity !== null) $('#employerInfoEmployerCity').val(employerInfoEmployerCity);
-
-        var employerInfoEmployerAddrLine2 = sessionStorage.getItem('employerInfoEmployerAddrLine2');
-        if (employerInfoEmployerAddrLine2 !== null) $('#employerInfoEmployerAddrLine2').val(employerInfoEmployerAddrLine2);   
-
-        var employerInfoEmployerState = sessionStorage.getItem('employerInfoEmployerState');
-        if (employerInfoEmployerState !== null) $('#employerInfoEmployerState').val(employerInfoEmployerState);   
-         
-        var employerInfoEmployerAddrLine3 = sessionStorage.getItem('employerInfoEmployerAddrLine3');
-        if (employerInfoEmployerAddrLine3 !== null) $('#employerInfoEmployerAddrLine3').val(employerInfoEmployerAddrLine3);
-
-        var employerInfoEmployerPostalCode = sessionStorage.getItem('employerInfoEmployerPostalCode');
-        if (employerInfoEmployerPostalCode !== null) $('#employerInfoEmployerPostalCode').val(employerInfoEmployerPostalCode);        
-       
-        var employerInfoEmployerAddrLine4 = sessionStorage.getItem('employerInfoEmployerAddrLine4');
-        if (employerInfoEmployerAddrLine4 !== null) $('#employerInfoEmployerAddrLine4').val(employerInfoEmployerAddrLine4);
-        
-        var employerInfoEmployerCountry = sessionStorage.getItem('employerInfoEmployerCountry');
-        if (employerInfoEmployerCountry !== null) $('#employerInfoEmployerCountry').val(employerInfoEmployerCountry);
-
-        var privateInfoGender = sessionStorage.getItem('privateInfoGender');
-        if (privateInfoGender !== null) $('#privateInfoGender').val(privateInfoGender);       
-        
-        var privateInfoEthnicity = sessionStorage.getItem('privateInfoEthnicity');
-        if (privateInfoEthnicity !== null) $('#privateInfoEthnicity').val(privateInfoEthnicity);
-        
-        var privateInfoSsn = sessionStorage.getItem('privateInfoSsn');
-        if (privateInfoSsn !== null) $('#privateInfoSsn').val(privateInfoSsn);   
-        
-        var privateInfoDob = sessionStorage.getItem('privateInfoDob');
-        if (privateInfoDob !== null) $('#privateInfoDob').val(privateInfoDob);        
-        
-        var privateInfoCreditCardNo = sessionStorage.getItem('privateInfoCreditCardNo');
-        if (privateInfoCreditCardNo !== null) $('#privateInfoCreditCardNo').val(privateInfoCreditCardNo);  
-        
-        var privateInfoCreditCardNoExpMonth = sessionStorage.getItem('privateInfoCreditCardNoExpMonth');
-        if (privateInfoCreditCardNoExpMonth !== null) $('#privateInfoCreditCardNoExpMonth').val(privateInfoCreditCardNoExpMonth);        
-        
-        var privateInfoCreditCardNoExpYear = sessionStorage.getItem('privateInfoCreditCardNoExpYear');
-        if (privateInfoCreditCardNoExpYear !== null) $('#privateInfoCreditCardNoExpYear').val(privateInfoCreditCardNoExpYear);        
-        
-        var privateInfoCreditCardNoCCVCode = sessionStorage.getItem('privateInfoCreditCardNoCCVCode');
-        if (privateInfoCreditCardNoCCVCode !== null) $('#privateInfoCreditCardNoCCVCode').val(privateInfoCreditCardNoCCVCode);          
-        
-        var privateInfoCCBillingAddressType = sessionStorage.getItem('privateInfoCCBillingAddressType');
-        if (privateInfoCCBillingAddressType !== null) $('#privateInfoCCBillingAddressType').val(privateInfoCCBillingAddressType);     
-        
-        var privateInfoCCBillingAddrLine1 = sessionStorage.getItem('privateInfoCCBillingAddrLine1');
-        if (privateInfoCCBillingAddrLine1 !== null) $('#privateInfoCCBillingAddrLine1').val(privateInfoCCBillingAddrLine1); 
-        
-        var privateInfoCCBillingCity = sessionStorage.getItem('privateInfoCCBillingCity');
-        if (privateInfoCCBillingCity !== null) $('#privateInfoCCBillingCity').val(privateInfoCCBillingCity);        
-       
-        var privateInfoCCBillingAddrLine2 = sessionStorage.getItem('privateInfoCCBillingAddrLine2');
-        if (privateInfoCCBillingAddrLine2 !== null) $('#privateInfoCCBillingAddrLine2').val(privateInfoCCBillingAddrLine2);     
-        
-        var privateInfoCCBillingState = sessionStorage.getItem('privateInfoCCBillingState');
-        if (privateInfoCCBillingState !== null) $('#privateInfoCCBillingState').val(privateInfoCCBillingState);     
-        
-        var privateInfoCCBillingAddrLine3 = sessionStorage.getItem('privateInfoCCBillingAddrLine3');
-        if (privateInfoCCBillingAddrLine3 !== null) $('#privateInfoCCBillingAddrLine3').val(privateInfoCCBillingAddrLine3); 
-
-        var privateInfoCCBillingPostalCode = sessionStorage.getItem('privateInfoCCBillingPostalCode');
-        if (privateInfoCCBillingPostalCode !== null) $('#privateInfoCCBillingPostalCode').val(privateInfoCCBillingPostalCode);        
-        
-        var privateInfoCCBillingAddrLine4 = sessionStorage.getItem('privateInfoCCBillingAddrLine4');
-        if (privateInfoCCBillingAddrLine4 !== null) $('#privateInfoCCBillingAddrLine4').val(privateInfoCCBillingAddrLine4);        
-        
-        var privateInfoCCBillingCountry = sessionStorage.getItem('privateInfoCCBillingCountry');
-        if (privateInfoCCBillingCountry !== null) $('#privateInfoCCBillingCountry').val(privateInfoCCBillingCountry);        
-  */       
-        
-        
-        
   
-    }
-
-    // Before refreshing the page, save the form data to sessionStorage
-    window.onbeforeunload = function() {
-/*         sessionStorage.setItem("contactInfoFirstName", $('#contactInfoFirstName').val());
-        sessionStorage.setItem("contactInfoLastName", $('#contactInfoLastName').val());
-        sessionStorage.setItem("contactInfoPrimaryEmail", $('#contactInfoPrimaryEmail').val());
-        sessionStorage.setItem("contactInfoHomePhoneNo", $('#contactInfoHomePhoneNo').val());        
-        sessionStorage.setItem("contactInfoSecondaryEmail", $('#contactInfoSecondaryEmail').val());
-        sessionStorage.setItem("contactInfoCellPhoneNo", $('#contactInfoCellPhoneNo').val());
-        sessionStorage.setItem("contactInfoWorkPhoneNo", $('#contactInfoWorkPhoneNo').val());
-        sessionStorage.setItem("contactInfoHomeAddressType", $('#contactInfoHomeAddressType').val());
-        sessionStorage.setItem("contactInfoHomeAddrLine1", $('#contactInfoHomeAddrLine1').val());
-        sessionStorage.setItem("contactInfoHomeCity", $('#contactInfoHomeCity').val());
-        sessionStorage.setItem("contactInfoHomeAddrLine2", $('#contactInfoHomeAddrLine2').val());  
-        sessionStorage.setItem("contactInfoHomeState", $('#contactInfoHomeState').val());         
-        sessionStorage.setItem("contactInfoHomeAddrLine3", $('#contactInfoHomeAddrLine3').val());
-        sessionStorage.setItem("contactInfoHomePostalCode", $('#contactInfoHomePostalCode').val());
-        sessionStorage.setItem("contactInfoHomeAddrLine4", $('#contactInfoHomeAddrLine4').val());        
-        sessionStorage.setItem("contactInfoHomeCountry", $('#contactInfoHomeCountry').val());
-        sessionStorage.setItem("employerInfoEmployerName", $('#employerInfoEmployerName').val());        
-        sessionStorage.setItem("employerInfoEmployerPhoneNo", $('#employerInfoEmployerPhoneNo').val());
-        sessionStorage.setItem("employerInfoEmployerAddressType", $('#employerInfoEmployerAddressType').val());
-        sessionStorage.setItem("employerInfoEmployerAddrLine1", $('#employerInfoEmployerAddrLine1').val());
-        sessionStorage.setItem("employerInfoEmployerCity", $('#employerInfoEmployerCity').val());
-        sessionStorage.setItem("employerInfoEmployerAddrLine2", $('#employerInfoEmployerAddrLine2').val());
-        sessionStorage.setItem("employerInfoEmployerState", $('#employerInfoEmployerState').val());
-        sessionStorage.setItem("employerInfoEmployerAddrLine3", $('#employerInfoEmployerAddrLine3').val());
-        sessionStorage.setItem("employerInfoEmployerPostalCode", $('#employerInfoEmployerPostalCode').val());
-        sessionStorage.setItem("employerInfoEmployerAddrLine4", $('#employerInfoEmployerAddrLine4').val());
-        sessionStorage.setItem("employerInfoEmployerCountry", $('#employerInfoEmployerCountry').val());        
-        sessionStorage.setItem("privateInfoGender", $('#privateInfoGender').val());
-        sessionStorage.setItem("privateInfoEthnicity", $('#privateInfoEthnicity').val());
-        sessionStorage.setItem("privateInfoSsn", $('#privateInfoSsn').val());
-        sessionStorage.setItem("privateInfoDob", $('#privateInfoDob').val());
-        sessionStorage.setItem("privateInfoCreditCardNo", $('#privateInfoCreditCardNo').val());        
-        sessionStorage.setItem("privateInfoCreditCardNoExpMonth", $('#privateInfoCreditCardNoExpMonth').val());
-        sessionStorage.setItem("privateInfoCreditCardNoExpYear", $('#privateInfoCreditCardNoExpYear').val());
-        sessionStorage.setItem("privateInfoCreditCardNoCCVCode", $('#privateInfoCreditCardNoCCVCode').val());
-        sessionStorage.setItem("privateInfoCCBillingAddressType", $('#privateInfoCCBillingAddressType').val());        
-        sessionStorage.setItem("privateInfoCCBillingAddrLine1", $('#privateInfoCCBillingAddrLine1').val());
-        sessionStorage.setItem("privateInfoCCBillingCity", $('#privateInfoCCBillingCity').val());
-        sessionStorage.setItem("privateInfoCCBillingAddrLine2", $('#privateInfoCCBillingAddrLine2').val());    
-        sessionStorage.setItem("privateInfoCCBillingState", $('#privateInfoCCBillingState').val());                  
-        sessionStorage.setItem("privateInfoCCBillingAddrLine3", $('#privateInfoCCBillingAddrLine3').val());
-        sessionStorage.setItem("privateInfoCCBillingPostalCode", $('#privateInfoCCBillingPostalCode').val());
-        sessionStorage.setItem("privateInfoCCBillingAddrLine4", $('#privateInfoCCBillingAddrLine4').val());        
-        sessionStorage.setItem("privateInfoCCBillingCountry", $('#privateInfoCCBillingCountry').val());
-        
-        
-        */
-        
-        
-        
-        
-        
-        
-        
-        
-
-     }
 </script>
 
 <style>
@@ -297,14 +94,7 @@ nav {
 </style>
 </head>
 <body>
-<%-- 	 <%List<StateOrProvince> statesOrProvincesForHomeAddress1     = (List<StateOrProvince>) session.getAttribute("statesOrProvincesForHomeAddress"); %> 
-	 <%List<StateOrProvince> statesOrProvincesForEmployerAddress1 = (List<StateOrProvince>) session.getAttribute("statesOrProvincesForEmployerAddress"); %> 
-	 <%List<StateOrProvince> statesOrProvincesForBillingAddress1  = (List<StateOrProvince>) session.getAttribute("statesOrProvincesForBillingAddress"); %> 
- --%>	
-<%-- 	<% --%>
-<%--  		String pageTitle = "Renter"; --%>
-<%-- 	%> --%>
-<%-- 	<jsp:param name="pageTitle" value="<%=pageTitle%>>" /> --%>
+ 
 	<%@include file="../common/common-header1.jsp"%>
 
 
@@ -817,21 +607,13 @@ nav {
 											</div>
 											<div class="col-md-6 mb-4">
 												<div class="form-outline"></div>
-<%-- 													<form:label class="form-label" path="privateInfoDob">Date of Birth</form:label>
-													<form:errors path="privateInfoDob" cssClass="error" />
-													
-													<form:input type="date" path="privateInfoDob" />
- --%>													
+											
  														<form:label class="form-label" path="privateInfoDob">Date of Birth</form:label>
  														<form:input type="date" id="privateInfoDob" path="privateInfoDob" value=""/><br>
  														<form:errors  path="privateInfoDob" cssClass="error" />
  														
-<!--  														<label class="form-label" for="privateInfoDob">Date of Birth</label> -->
-<!--  													    <input type="text" id="privateInfoDob" />  -->
- 											 
-	
+												</div>
 											</div>
-										</div>
 										
 										
 
@@ -1098,43 +880,11 @@ nav {
 
 	<%@include file="../common/common-footer1.jsp"%>
 	
-<!-- 	<script type="text/javascript">
-     function getStatesOrProvincesForHomeAddress(selectedCountry)
-     {
-    	window.location.href='${pageContext.request.contextPath}/statesOrProvinces/getStatesOrProvincesForHomeAddress?country='+selectedCountry; 
-     }
-     function getStatesOrProvincesForEmployerAddress(selectedCountry)
-     {
-    	window.location.href='${pageContext.request.contextPath}/statesOrProvinces/getStatesOrProvincesForEmployerAddress?country='+selectedCountry; 
-     }
-     function getStatesOrProvincesForBillingAddress(selectedCountry)
-     {
-    	window.location.href='${pageContext.request.contextPath}/statesOrProvinces/getStatesOrProvincesForBillingAddress?country='+selectedCountry; 
-     }
 
-     </script> -->
      
 
 
-<!-- 	<script>
-		$( function() {
-		    $.datepicker.setDefaults({
-		        showOn: "both",
-		        buttonImageOnly: true,
-		        buttonImage: "calender.gif",
-		        buttonText: "Calendar"
-		        changeDay: true,
-		        changeMonth: true,
-		        changeYear: true,
-		        dateFormat: "M-dd-yy",		
-		        onClose:function(date, inst){
-		            $("#selectedDateVal").html(date);
-		        }
-		    });
-		
-		    $( "#datepicker" ).datepicker();
-		});
-	</script> -->
+
 <script>
   $( "#privateInfoDob" ).datepicker();  
  

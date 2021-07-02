@@ -65,13 +65,18 @@ public class AppTest
     }
 
      
-    
+    /*
+     * Mock the RentalPaymentDao class into the service
+     */
 	@Before
 	public void setUp() throws Exception {
 		repo = Mockito.mock(RentalPaymentDao.class);
 		service = new RentalPaymentServiceImpl(repo);
 	}
 	
+	/*
+	 *  Mock test the Rental Payment find by id service method
+	 */
 	public void testRentalPaymentFindById() {
 		RentalPayment expected = new RentalPayment(17L,4L,31,"2023","01", false, null,2400.0, "Early bill");
 		expected.setId(1L);
@@ -80,6 +85,9 @@ public class AppTest
 		assertEquals(expected, actual);
 	}
 	
+	/*
+	 *  Mock test the Rental Payment find all rental payments by user id service method
+	 */
     public void testRentalPaymentFindAllRentalPaymentsByRenterUserId()
     {
     	// List<RentalPayment> findAllRentalPaymentsByRenterUserId(long renterUserId);
@@ -97,6 +105,9 @@ public class AppTest
     	
     }
 	
+	/*
+	 *  Mock test the Rental Payment find all rental payments by user id service method
+	 */
     public void testRentalPaymentFindAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo()
     {
     	// List<RentalPayment> findAllRentalPaymentsByRentalPropertyIdAndRentalUnitNo(long rentalPropertyId, int rentalUnitNo);
@@ -311,10 +322,32 @@ public class AppTest
         service.save(rentalPayment);
          
         verify(repo, times(1)).save(rentalPayment);
-
-     
-    }
   
+    }
+
+    public void testRentalPaymentUpdate()
+    {
+    	
+    	// first emulate finding the rentalPayment record to update
+		RentalPayment theRentalPaymentToUpdate = new RentalPayment(17L,4L,31,"2023","01", false, null,2400.0, "Early bill");
+		theRentalPaymentToUpdate.setId(1L);
+		Mockito.when(repo.findById(anyLong())).thenReturn(theRentalPaymentToUpdate);
+		RentalPayment actual = service.findById(1L);
+		assertEquals(theRentalPaymentToUpdate, actual);
+
+    	
+		// then emulate updating that record
+		
+        // void update(RentalPayment rentalPayment);
+
+		theRentalPaymentToUpdate.setRentalYear("2022");
+        
+        service.update(theRentalPaymentToUpdate);
+         
+        verify(repo, times(1)).update(theRentalPaymentToUpdate);
+  
+    }
+    
     public void testRentalPaymentDelete()
     {
      

@@ -1,5 +1,7 @@
 package com.abcrentals.binu.thankachan.enums;
-
+/*
+ * Enum representing rental repair types
+ */
 public enum RentalRepairTypeEnum {
 	NOT_AVAILABLE,
 	KITCHEN,

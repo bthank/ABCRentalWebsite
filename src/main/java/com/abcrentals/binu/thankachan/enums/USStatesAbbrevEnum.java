@@ -1,5 +1,7 @@
 package com.abcrentals.binu.thankachan.enums;
-
+/*
+ * Enum representing US State abbreviations
+ */
 public enum USStatesAbbrevEnum {
 	AL,
 	AK,
