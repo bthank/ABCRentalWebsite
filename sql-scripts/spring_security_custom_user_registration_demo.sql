@@ -1,14 +1,8 @@
 # Rental Website DB scripts
 DROP DATABASE  IF EXISTS `rental-website-db`;
 
-CREATE DATABASE  IF NOT EXISTS `rental-website-db`;
-USE `rental-website-db`;
 
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
+# To create the User table:
 
 
 -- NOTE: The passwords are encrypted using BCrypt
@@ -143,29 +137,29 @@ INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto R
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Aguadilla');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Aguas Buenas');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Aibonito');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Añasco');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Aï¿½asco');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Arecibo');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Arroyo');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Barceloneta');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Barranquitas');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Bayamón');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Bayamï¿½n');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Cabo Rojo');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Caguas');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Camuy');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Canóvanas');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Canï¿½vanas');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Carolina');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Cataño');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Cataï¿½o');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Cayey');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Ceiba');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Cidra');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Coamo');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Comerío');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Comerï¿½o');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Corozal');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Culebra');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Dorado');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Fajardo');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Florida');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Guánica');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Guï¿½nica');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Guayama');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Guayanilla');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Guaynabo');
@@ -175,35 +169,35 @@ INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto R
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Humacao');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Isabela');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Jayuya');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Juana Díaz');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Juana Dï¿½az');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Juncos');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Lajas');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Lares');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Las Marías');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Las Marï¿½as');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Las Piedras');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Loíza');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Loï¿½za');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Luquillo');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Manatí');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Manatï¿½');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Maricao');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Maunabo');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Mayagüez');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Mayagï¿½ez');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Moca');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Morovis');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Naguabo');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Naranjito');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Orocovis');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Patillas');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Peñuelas');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Peï¿½uelas');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Ponce');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Quebradillas');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Rincón');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Río Grande');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Rincï¿½n');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Rï¿½o Grande');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Sabana Grande');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Salinas');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Germán');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Germï¿½n');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Juan');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Lorenzo');
-INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Sebastián');
+INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','San Sebastiï¿½n');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Santa Isabel');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Toa Alta');
 INSERT INTO `states_or_provinces` (country, state_or_province) VALUES ('Puerto Rico','Toa Baja');
